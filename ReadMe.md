@@ -1,4 +1,3 @@
-![logo](https://github.com/Fuad2e3/Fuad2e3/blob/main/2.jpg)
 
 
 <h1>Hi i am Fuad</h1>
