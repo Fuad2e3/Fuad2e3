@@ -19,8 +19,9 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/autocad/autocad-original.svg" height="50"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" height="50"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" height="50"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cisco/cisco-original.svg" height="50"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Cisco_logo_blue_2016.svg" height="50" alt="Cisco"/>
 </p>
+
 
 
 # 📊 GitHub Stats:
