@@ -19,7 +19,7 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/autocad/autocad-original.svg" height="50"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" height="50"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" height="50"/>
-  <img src="https://1000logos.net/wp-content/uploads/2021/06/Cisco-logo.png" height="50" alt="Cisco"/>
+  <img src="https://1000logos.net/wp-content/uploads/2021/06/Cisco-logo.png" height="50"/>
 </p>
 
 
