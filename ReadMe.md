@@ -1,39 +1,195 @@
-<h1>Hi i am Fuad</h1>
+<h1 align="center">Hi 👋, I'm Abdullah Al Fuad</h1>
 
-## 🌐 Socials:
-[![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?logo=Facebook&logoColor=white)](https://www.facebook.com/fuad.islam.2010) 
+<h3 align="center">
+🚀 Flutter Developer | 📱 Cross-Platform App Developer
+</h3>
 
-# 💻 Tech Stack:
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" height="50"/>  
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="50"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" height="50"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" height="50"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="50"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="50"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" height="50"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="50"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" height="50"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" height="50"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="50"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/latex/latex-original.svg" height="50"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/autocad/autocad-original.svg" height="50"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" height="50"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" height="50"/>
-  <img src="https://1000logos.net/wp-content/uploads/2021/06/Cisco-logo.png" height="50"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" height="50"/>              
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="50"/>
+Building modern mobile applications with clean architecture, smooth user experiences, and practical real-world solutions.
 </p>
 
-# 📊 GitHub Stats:
-![](https://github-readme-stats.vercel.app/api?username=Fuad2e3&theme=dark&hide_border=false&include_all_commits=false&count_private=false)<br/>
-![](https://github-readme-streak-stats.herokuapp.com/?user=Fuad2e3&theme=dark&hide_border=false)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=Fuad2e3&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
+<p align="center">
+  <a href="https://www.facebook.com/fuad.islam.2010">
+    <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white"/>
+  </a>
+</p>
 
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Poppins&size=28&duration=3000&pause=1000&color=00C2FF&center=true&vCenter=true&width=900&lines=Flutter+Developer;Cross-Platform+App+Developer;Building+Real-World+Mobile+Apps;Always+Learning.+Always+Building." />
+</p>
 
+---
 
-## 🏆 GitHub Trophies
-![](https://github-profile-trophy.vercel.app/?username=Fuad2e3&theme=radical&no-frame=false&no-bg=true&margin-w=4)
+## 🧠 About Me
 
-### ✍️ Random Dev Quote
-![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
+I’m a Flutter developer who enjoys building mobile applications that are practical, clean, and enjoyable to use.
+
+I love turning ideas into real mobile products with a strong focus on performance, smooth UI, and scalable architecture.
+
+- 📱 Focused on Flutter & cross-platform mobile development
+- 💻 Working with Dart, Java, and Kotlin
+- 🔥 Building apps with Firebase integration
+- 🎨 Passionate about beautiful UI and smooth user experiences
+- 🛠 Love solving real-world problems through mobile applications
+
+> *Great apps are built with consistency, creativity, and attention to detail.*
+
+---
+
+## 🚀 What I Build
+
+- 📨 Smart mobile applications
+- 🛒 E-Commerce mobile apps
+- 📱 Cross-platform Flutter applications
+- 🔥 Firebase authentication & cloud database apps
+- 🎨 UI-focused modern mobile applications
+- ⚡ Fast, scalable, and user-friendly apps
+
+---
+
+## 🚀 Core Skills
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=flutter,dart,firebase,androidstudio,java,kotlin" />
+</p>
+
+---
+
+## 💻 Tech Stack
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=flutter,dart,androidstudio,java,kotlin,firebase,html,css,js,php,mysql,python,c,cpp,git,github,figma,bash,arduino,react,nodejs,vscode&perline=11" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/AutoCAD-E51050?style=for-the-badge&logo=autodesk&logoColor=white"/>
+  <img src="https://img.shields.io/badge/LaTeX-008080?style=for-the-badge&logo=latex&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Cisco-1BA0D7?style=for-the-badge&logo=cisco&logoColor=white"/>
+</p>
+
+---
+
+## 📌 Project Journey
+
+### 🚧 Currently Building
+
+#### 📨 SMS App *(Private)*
+**Tech:** Flutter, Dart, Firebase  
+Modern SMS management application with smart organization and categorized inbox.
+
+#### 🌱 Plantive *(Private)*
+**Tech:** Flutter, Firebase  
+Plant care mobile application focused on practical guidance and clean user experience.
+
+#### 🎓 Unimate *(Private)*
+**Tech:** Flutter, Firebase  
+All-in-one student utility application with essential academic tools.
+
+---
+
+### 🔮 Future Projects
+
+#### 🕌 DeenSphere
+**Planned Tech:** Flutter, Firebase, API Integration  
+Islamic lifestyle application with practical daily tools and useful features.
+
+#### 🩺 Smart Homeopathy Doctor
+**Planned Tech:** Flutter, AI Integration, Firebase  
+Smart healthcare-focused application for intelligent recommendations.
+
+#### 💪 Fitness Tracker App
+**Planned Tech:** Flutter, Firebase, Health APIs  
+Fitness app for workouts, progress tracking, and health monitoring.
+
+---
+
+### ✅ Completed Projects *(Public Repositories)*
+
+#### 🧠 GreenMind *(AI / Machine Learning)*
+**Tech:** Python, Machine Learning
+
+#### 🏠 Sweet Home *(Engineering Drawing)*
+**Tech:** AutoCAD
+
+#### 🎓 Student Management System *(Data Structures)*
+**Tech:** Java
+
+#### 🔄 Converter *(Computer Architecture)*
+**Tech:** Java
+
+#### 🌐 Campus Network *(Computer Network)*
+**Tech:** Cisco / Networking
+
+#### 🛡 BitGuard *(Data Communication)*
+**Tech:** Java
+
+#### 🔐 Cyber Password Strength Analyzer *(Cyber Security)*
+**Tech:** Python
+
+#### 🚀 Nebula Navigator *(Operating System)*
+**Tech:** C
+
+#### 🌾 Agriculture Information Service *(Web Programming)*
+**Tech:** HTML, CSS, JavaScript, PHP, MySQL
+
+#### 💰 Investment Management System *(OOP)*
+**Tech:** Java
+
+---
+
+## 📊 GitHub Stats
+
+<p align="center">
+  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=Fuad2e3&show_icons=true&theme=tokyonight&hide_border=true"/>
+  <img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=Fuad2e3&theme=tokyonight&hide_border=true"/>
+</p>
+
+---
+
+## 🌐 Languages
+
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Fuad2e3&theme=tokyonight"/>
+</p>
+
+---
+
+## 📈 Contribution Graph
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Fuad2e3&theme=tokyo-night&hide_border=true"/>
+</p>
+
+---
+
+## 👀 Profile Views
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=Fuad2e3&label=Profile%20Views&color=0e75b6&style=for-the-badge"/>
+</p>
+
+---
+
+## 🌍 Connect With Me
+
+<p align="center">
+  <a href="https://www.facebook.com/fuad.islam.2010">
+    <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white"/>
+  </a>
+</p>
+
+---
+
+## 🧠 Development Mindset
+
+- ✔ Clean Code
+- ✔ Performance First
+- ✔ User-Centered Design
+- ✔ Scalable Architecture
+- ✔ Continuous Learning
+
+---
+
+<p align="center">
+  <b>⚡ Always learning. Always building. Always evolving.</b>
+</p>
