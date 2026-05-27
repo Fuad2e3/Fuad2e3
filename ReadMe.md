@@ -154,13 +154,6 @@ Fitness app for workouts, progress tracking, and health monitoring.
 
 ---
 
-## 📈 Contribution Graph
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Fuad2e3&theme=tokyo-night&hide_border=true"/>
-</p>
-
----
 
 ## 👀 Profile Views
 
