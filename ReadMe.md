@@ -127,7 +127,7 @@ Fitness app for workouts, progress tracking, and health monitoring.
 **Tech:** Python
 
 #### 🚀 Nebula Navigator *(Operating System)*
-**Tech:** C
+**Tech:** shell, 
 
 #### 🌾 Agriculture Information Service *(Web Programming)*
 **Tech:** HTML, CSS, JavaScript, PHP, MySQL
