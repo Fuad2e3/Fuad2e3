@@ -132,8 +132,8 @@ Fitness app for workouts, progress tracking, and health monitoring.
 #### 🌾 Agriculture Information Service *(Web Programming)*
 **Tech:** HTML, CSS, JavaScript, PHP, MySQL
 
-#### 💰 Investment Management System *(OOP)*
-**Tech:** Java
+#### 💰 Investment Management System *(OOP)* *(DB)* *(MM)*
+**Tech:** Java, MySQL, Assembly 
 
 ---
 
