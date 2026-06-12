@@ -73,7 +73,7 @@ I love turning ideas into real mobile products with a strong focus on performanc
 
 ### 🚧 Currently Building
 
-#### 📨 SMS App *(Private)*
+#### 📨 SMS App *(public)*
 **Tech:** Flutter, Dart, Firebase  
 Modern SMS management application with smart organization and categorized inbox.
 
@@ -81,7 +81,7 @@ Modern SMS management application with smart organization and categorized inbox.
 **Tech:** Flutter, Firebase  
 Plant care mobile application focused on practical guidance and clean user experience.
 
-#### 🎓 Unimate *(Private)*
+#### 🎓 Unimate *(public)*
 **Tech:** Flutter, Firebase  
 All-in-one student utility application with essential academic tools.
 
