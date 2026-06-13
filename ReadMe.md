@@ -67,22 +67,6 @@ I love turning ideas into real mobile products with a strong focus on performanc
 
 ### 🚧 Currently Building
 
-#### 📨 SMS App *(public)*
-**Tech:** ▸Flutter ▸ Dart ▸ Node.js ▸ Express.js ▸ MySQL ▸REST API
-Modern SMS management application with smart organization and categorized inbox.
-
-#### 🌱 Plantive *(Private)*
-**Tech:** ▸Java ▸ Firebase ▸ Google Maps API ▸Weather API ▸ OpenRouter & Gemini API  
-Plant care mobile application focused on practical guidance and clean user experience.
-
-#### 🎓 Unimate *(public)*
-**Tech:** ▸Flutter ▸ Dart ▸ Node.js ▸ Express.js ▸ MySQL ▸REST API
-All-in-one student utility application with essential academic tools.
-
----
-
-### 🔮 Future Projects
-
 #### 🕌 DeenSphere
 **Tech:** ▸Flutter ▸ Dart ▸ Node.js ▸ Express.js ▸ MySQL ▸REST API
 Islamic lifestyle application with practical daily tools and useful features.
@@ -102,6 +86,24 @@ Authentic Bangladeshi Food Delivery for Canada -- Deshi Saad in Canada.
 ---
 
 ### ✅ Completed Projects *(Public Repositories)*
+
+#### 📨 SMS App 
+🔒 Source Code: Private
+🌐 Live Demo: Public
+**Tech:** ▸Flutter ▸ Dart ▸ Node.js ▸ Express.js ▸ MySQL ▸REST API
+Modern SMS management application with smart organization and categorized inbox.
+
+#### 🌱 Plantive 
+🔒 Source Code: Private
+🌐 Live Demo: Public
+**Tech:** ▸Java ▸ Firebase ▸ Google Maps API ▸Weather API ▸ OpenRouter & Gemini API  
+Plant care mobile application focused on practical guidance and clean user experience.
+
+#### 🎓 Unimate 
+🔒 Source Code: Private
+🌐 Live Demo: Public
+**Tech:** ▸Flutter ▸ Dart ▸ Node.js ▸ Express.js ▸ MySQL ▸REST API
+All-in-one student utility application with essential academic tools.
 
 #### 🧠 GreenMind *(AI / Machine Learning)*
 **Tech:** Python, Machine Learning
