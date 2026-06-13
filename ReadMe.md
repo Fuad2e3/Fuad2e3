@@ -12,10 +12,6 @@ Building modern mobile applications with clean architecture, smooth user experie
   <img src="https://readme-typing-svg.herokuapp.com?font=Poppins&size=28&duration=3000&pause=1000&color=00C2FF&center=true&vCenter=true&width=900&lines=Flutter+Developer;Cross-Platform+App+Developer;Building+Real-World+Mobile+Apps;Always+Learning.+Always+Building." />
 </p>
 
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Fuad2e3&theme=tokyonight&no-bg=true&margin-w=15" />
-</p>
-
 ---
 
 ## 🧠 About Me
@@ -129,13 +125,6 @@ I’m a Flutter developer who enjoys building mobile applications that are pract
 
 ---
 
-## 🐍 Contribution Snake
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Fuad2e3/Fuad2e3/output/github-contribution-grid-snake.svg" alt="Snake Animation" />
-</p>
-
----
 
 <p align="center">
   <b>⚡ Always learning. Always building. Always evolving.</b>
