@@ -35,7 +35,7 @@ I’m a Flutter developer who enjoys building mobile applications that are pract
 
 ### 🚀 Core Skills
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=flutter,dart,firebase,androidstudio,java,kotlin" />
+  <img src="https://skillicons.dev/icons?i=flutter,dart,firebase,androidstudio,java" />
 </p>
 
 ### 💻 Tech Stack
@@ -44,6 +44,7 @@ I’m a Flutter developer who enjoys building mobile applications that are pract
 </p>
 
 <p align="center">
+  <img src="https://img.shields.io/badge/REST%20API-005571?style=for-the-badge&logo=restapi&logoColor=white"/>
   <img src="https://img.shields.io/badge/AutoCAD-E51050?style=for-the-badge&logo=autodesk&logoColor=white"/>
   <img src="https://img.shields.io/badge/LaTeX-008080?style=for-the-badge&logo=latex&logoColor=white"/>
   <img src="https://img.shields.io/badge/Cisco-1BA0D7?style=for-the-badge&logo=cisco&logoColor=white"/>
@@ -66,21 +67,15 @@ I’m a Flutter developer who enjoys building mobile applications that are pract
 
 ### ✅ Featured Projects
 
-<details open>
-<summary><b>Mobile Applications (Flutter/Java)</b></summary>
-<br/>
+#### Mobile Applications (Flutter/Java)
 
 | Project | Status | Tech Stack |
 | :--- | :--- | :--- |
-| **📨 SMS App** | Private Code / Live Demo | `Flutter` `Dart` `Node.js` `MySQL` |
+| **📨 SMS App** | Private Code / Live Demo | `Flutter` `Dart` `Node.js` `MySQL` `REST API` |
 | **🌱 Plantive** | Private Code / Live Demo | `Java` `Firebase` `Gemini AI` `Google Maps` |
-| **🎓 Unimate** | Private Code / Live Demo | `Flutter` `Dart` `Node.js` `MySQL` |
+| **🎓 Unimate** | Private Code / Live Demo | `Flutter` `Dart` `Node.js` `MySQL` `REST API` |
 
-</details>
-
-<details>
-<summary><b>Academic & Specialized Projects</b></summary>
-<br/>
+#### Academic & Specialized Projects
 
 | Category | Project | Tech Stack |
 | :--- | :--- | :--- |
@@ -94,8 +89,6 @@ I’m a Flutter developer who enjoys building mobile applications that are pract
 | **OS** | 🚀 Nebula Navigator | `Shell` |
 | **Web Dev** | 🌾 Agriculture Info Service | `PHP` `MySQL` `JS` |
 | **Misc** | 💰 Investment Management System | `Java` `MySQL` `Assembly` |
-
-</details>
 
 ---
 
