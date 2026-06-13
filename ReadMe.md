@@ -44,7 +44,7 @@ I’m a Flutter developer who enjoys building mobile applications that are pract
 
 ### 💻 Tech Stack
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=flutter,dart,androidstudio,java,kotlin,firebase,html,css,js,php,mysql,python,c,cpp,git,github,bash,arduino,react,MySQL,nodejs,vscode&perline=11" />
+  <img src="https://skillicons.dev/icons?i=flutter,dart,androidstudio,java,kotlin,firebase,html,css,js,php,mysql,python,c,cpp,git,github,bash,arduino,react,nodejs,vscode&perline=11" />
 </p>
 
 <p align="center">
@@ -65,11 +65,11 @@ I’m a Flutter developer who enjoys building mobile applications that are pract
 | **🕌 DeenSphere** | Islamic lifestyle application with practical daily tools and useful features. | `Flutter` `Dart` `Node.js` `MySQL` `REST API` |
 | **🩺 Smart Homeopathy Doctor** | Smart healthcare-focused application for intelligent recommendations. | `Flutter` `Dart` `Node.js` `MySQL` `REST API` |
 | **💪 Fitness Tracker App** | Fitness app for workouts, progress tracking, and health monitoring. | `Flutter` `Dart` `Node.js` `MySQL` `REST API` |
-| **🍁 Khidda** | Authentic Bangladeshi Food Delivery for Canada. | `Flutter` `Dart` `Node.js` `MySQL` `REST API` |
+| **🥘 Khidda** | Authentic Bangladeshi Food Delivery for Canada. | `Flutter` `Dart` `Node.js` `MySQL` `REST API` |
 
 ---
 
-### ✅ Featured Projects
+### ✅ Complete Projects
 
 #### Mobile Applications (Flutter/Java)
 
@@ -86,9 +86,9 @@ I’m a Flutter developer who enjoys building mobile applications that are pract
 | **AI / ML** | 🧠 GreenMind | `Python` `Machine Learning` |
 | **Engineering** | 🏠 Sweet Home | `AutoCAD` |
 | **Data Structures** | 🎓 Student Management System | `Java` |
-| **Comp Arch** | 🔄 Converter | `Java` |
+| **Computer Architecture** | 🔄 Converter | `Java` |
 | **Networking** | 🌐 Campus Network | `Cisco` |
-| **Data Comm** | 🛡 BitGuard | `Java` |
+| **Data Communication** | 🛡 BitGuard | `Java` |
 | **Cyber Security** | 🔐 Password Strength Analyzer | `Python` |
 | **OS** | 🚀 Nebula Navigator | `Shell` |
 | **Web Dev** | 🌾 Agriculture Info Service | `PHP` `MySQL` `JS` |
@@ -132,7 +132,7 @@ I’m a Flutter developer who enjoys building mobile applications that are pract
 ## 🐍 Contribution Snake
 
 <p align="center">
-  <img src="https://github.com/Fuad2e3/Fuad2e3/blob/output/github-contribution-grid-snake.svg" alt="Snake Animation" />
+  <img src="https://raw.githubusercontent.com/Fuad2e3/Fuad2e3/output/github-contribution-grid-snake.svg" alt="Snake Animation" />
 </p>
 
 ---
