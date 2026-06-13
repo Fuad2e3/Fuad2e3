@@ -35,7 +35,11 @@ I’m a Flutter developer who enjoys building mobile applications that are pract
 
 ### 🚀 Core Skills
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=flutter,dart,firebase,androidstudio,java" />
+  <img src="https://skillicons.dev/icons?i=flutter,dart,firebase,nodejs,mysql,androidstudio,java" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/REST%20API-005571?style=for-the-badge&logo=restapi&logoColor=white"/>
 </p>
 
 ### 💻 Tech Stack
