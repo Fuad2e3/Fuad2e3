@@ -71,9 +71,10 @@ I’m a Flutter developer who enjoys building mobile applications that are pract
 
 | Project | Status | Tech Stack |
 | :--- | :--- | :--- |
-| **📨 SMS App** | Private Code / Live Demo | `Flutter` `Dart` `Node.js` `MySQL` `REST API` |
 | **🌱 Plantive** | Private Code / Live Demo | `Java` `Firebase` `Gemini AI` `Google Maps` |
 | **🎓 Unimate** | Private Code / Live Demo | `Flutter` `Dart` `Node.js` `MySQL` `REST API` |
+| **📨 SMS App** | Private Code / Live Demo | `Flutter` `Dart` `Node.js` `MySQL` `REST API` |
+
 
 #### Academic & Specialized Projects
 
