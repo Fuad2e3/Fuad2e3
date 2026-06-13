@@ -95,9 +95,10 @@ Smart healthcare-focused application for intelligent recommendations.
 **Tech:** ▸Flutter ▸ Dart ▸ Node.js ▸ Express.js ▸ MySQL ▸REST API
 Fitness app for workouts, progress tracking, and health monitoring.
 
-#### 💪 Khidda
+#### 🍁 Khidda
 **Tech:** ▸Flutter ▸ Dart ▸ Node.js ▸ Express.js ▸ MySQL ▸REST API
 Authentic Bangladeshi Food Delivery for Canada -- Deshi Saad in Canada.
+
 ---
 
 ### ✅ Completed Projects *(Public Repositories)*
