@@ -68,15 +68,15 @@ I love turning ideas into real mobile products with a strong focus on performanc
 ### 🚧 Currently Building
 
 #### 📨 SMS App *(public)*
-**Tech:** Flutter, Dart, Firebase  
+**Tech:** ▸Flutter ▸ Dart ▸ Node.js ▸ Express.js ▸ MySQL ▸REST API
 Modern SMS management application with smart organization and categorized inbox.
 
 #### 🌱 Plantive *(Private)*
-**Tech:** Flutter, Firebase  
+**Tech:** ▸Java ▸ Firebase ▸ Google Maps API ▸Weather API ▸ OpenRouter & Gemini API  
 Plant care mobile application focused on practical guidance and clean user experience.
 
 #### 🎓 Unimate *(public)*
-**Tech:** Flutter, Firebase  
+**Tech:** ▸Flutter ▸ Dart ▸ Node.js ▸ Express.js ▸ MySQL ▸REST API
 All-in-one student utility application with essential academic tools.
 
 ---
@@ -84,17 +84,20 @@ All-in-one student utility application with essential academic tools.
 ### 🔮 Future Projects
 
 #### 🕌 DeenSphere
-**Planned Tech:** Flutter, Firebase, API Integration  
+**Tech:** ▸Flutter ▸ Dart ▸ Node.js ▸ Express.js ▸ MySQL ▸REST API
 Islamic lifestyle application with practical daily tools and useful features.
 
 #### 🩺 Smart Homeopathy Doctor
-**Planned Tech:** Flutter, AI Integration, Firebase  
+**Tech:** ▸Flutter ▸ Dart ▸ Node.js ▸ Express.js ▸ MySQL ▸REST API
 Smart healthcare-focused application for intelligent recommendations.
 
 #### 💪 Fitness Tracker App
-**Planned Tech:** Flutter, Firebase, Health APIs  
+**Tech:** ▸Flutter ▸ Dart ▸ Node.js ▸ Express.js ▸ MySQL ▸REST API
 Fitness app for workouts, progress tracking, and health monitoring.
 
+#### 💪 Khidda
+**Tech:** ▸Flutter ▸ Dart ▸ Node.js ▸ Express.js ▸ MySQL ▸REST API
+Authentic Bangladeshi Food Delivery for Canada -- Deshi Saad in Canada.
 ---
 
 ### ✅ Completed Projects *(Public Repositories)*
