@@ -44,7 +44,7 @@ I’m a Flutter developer who enjoys building mobile applications that are pract
 
 ### 💻 Tech Stack
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=flutter,dart,androidstudio,java,kotlin,firebase,html,css,js,php,mysql,python,c,cpp,git,github,figma,bash,arduino,react,nodejs,vscode&perline=11" />
+  <img src="https://skillicons.dev/icons?i=flutter,dart,androidstudio,java,kotlin,firebase,html,css,js,php,mysql,python,c,cpp,git,github,bash,arduino,react,MySQL,nodejs,vscode&perline=11" />
 </p>
 
 <p align="center">
