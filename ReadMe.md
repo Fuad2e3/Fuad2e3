@@ -67,7 +67,7 @@ I’m a Flutter developer who enjoys building mobile applications that are pract
 
 ### ✅ Complete Projects
 
-#### Mobile Applications (Flutter/Java)
+#### Android & Cross-Platform Applications
 
 | Project | Status | Tech Stack |
 | :--- | :--- | :--- |
