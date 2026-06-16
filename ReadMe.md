@@ -60,7 +60,7 @@ I’m a Flutter developer who enjoys building mobile applications that are pract
 | :--- | :--- | :--- |
 | **🕌 DeenSphere** | Islamic lifestyle application with practical daily tools and useful features. | `Flutter` `Dart` `Node.js` `MySQL` `REST API` |
 | **🩺 Smart Homeopathy Doctor** | Smart healthcare-focused application for intelligent recommendations. | `Flutter` `Dart` `Node.js` `MySQL` `REST API` |
-| **💪 Fitness Tracker App** | Fitness app for workouts, progress tracking, and health monitoring. | `Flutter` `Dart` `Node.js` `MySQL` `REST API` |
+| **💪 Pyrova** | Fitness app for workouts, progress tracking, and health monitoring. | `Flutter` `Dart` `Node.js` `MySQL` `REST API` |
 | **🥘 Khidda** | Authentic Bangladeshi Food Delivery for Canada. | `Flutter` `Dart` `Node.js` `MySQL` `REST API` |
 
 ---
