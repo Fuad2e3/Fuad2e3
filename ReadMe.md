@@ -9,7 +9,7 @@ Building modern mobile applications with clean architecture, smooth user experie
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Poppins&size=28&duration=3000&pause=1000&color=00C2FF&center=true&vCenter=true&width=900&lines=Flutter+Developer;Cross-Platform+App+Developer;Building+Real-World+Mobile+Apps;Always+Learning.+Always+Building." />
+  <img src="https://readme-typing-svg.demolab.com?font=Poppins&size=28&duration=3000&pause=1000&color=00C2FF&center=true&vCenter=true&width=900&lines=Flutter+Developer;Cross-Platform+App+Developer;Building+Real-World+Mobile+Apps;Always+Learning.+Always+Building." />
 </p>
 
 ---
@@ -106,7 +106,7 @@ I’m a Flutter developer who enjoys building mobile applications that are pract
 
 <p align="center">
   <img width="49%" src="https://github-readme-stats.vercel.app/api?username=Fuad2e3&show_icons=true&theme=tokyonight&hide_border=true"/>
-  <img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=Fuad2e3&theme=tokyonight&hide_border=true"/>
+  <img width="49%" src="https://streak-stats.demolab.com/?user=Fuad2e3&theme=tokyonight&hide_border=true"/>
 </p>
 
 <p align="center">
