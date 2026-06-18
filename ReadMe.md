@@ -9,7 +9,7 @@ Building modern mobile applications with clean architecture, smooth user experie
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Poppins&size=28&duration=3000&pause=1000&color=00C2FF&center=true&vCenter=true&width=900&lines=Flutter+Developer;Cross-Platform+App+Developer;Building+Real-World+Mobile+Apps;Always+Learning.+Always+Building." />
+  <img src="https://readme-typing-svg.demolab.com?font=Poppins&size=28&duration=3000&pause=1000&color=00C2FF&center=true&vCenter=true&width=900&lines=Full+Stack+Developer;Flutter+Developer;Cross-Platform+App+Developer;Building+Real-World+Mobile+Apps;Always+Learning.+Always+Building." />
 </p>
 
 ---
