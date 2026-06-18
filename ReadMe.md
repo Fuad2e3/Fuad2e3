@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm Abdullah Al Fuad</h1>
 
 <h3 align="center">
-🚀 Flutter Developer | 📱 Cross-Platform App Developer
+💻 Full Stack Developer | 🚀 Flutter Developer | 📱 Cross-Platform App Developer 
 </h3>
 
 <p align="center">
