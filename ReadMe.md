@@ -91,7 +91,7 @@ I’m a Flutter developer who enjoys building mobile applications that are pract
 </p>
 
 <p align="center">
-  <img src="https://github.com/Fuad2e3/Fuad2e3/blob/master/github-metrics.svg"/>
+  <img src="https://raw.githubusercontent.com/Fuad2e3/Fuad2e3/master/github-metrics.svg"/>
 </p>
 
 ---
