@@ -27,28 +27,18 @@ I’m a Flutter developer who enjoys building mobile applications that are pract
 
 ---
 
-## 🚀 Core Skills & Tech Stack
-
-### 🚀 Core Skills
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=flutter,dart,firebase,nodejs,mysql,androidstudio,java" />
-</p>
+## 🚀 Tech Stack & Expertise
 
 <p align="center">
-  <img src="https://img.shields.io/badge/REST%20API-005571?style=for-the-badge&logo=restapi&logoColor=white"/>
+  <img src="https://skillicons.dev/icons?i=flutter,dart,androidstudio,java,kotlin,firebase,nodejs,mysql,php,git,github,vscode,postman,bash,python,c,cpp,arduino,react,html,css,js&perline=11" />
 </p>
 
-### 💻 Tech Stack
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=flutter,dart,androidstudio,java,kotlin,firebase,html,css,js,php,mysql,python,c,cpp,git,github,bash,arduino,react,nodejs,vscode&perline=11" />
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/REST%20API-005571?style=for-the-badge&logo=restapi&logoColor=white"/>
-  <img src="https://img.shields.io/badge/AutoCAD-E51050?style=for-the-badge&logo=autodesk&logoColor=white"/>
-  <img src="https://img.shields.io/badge/LaTeX-008080?style=for-the-badge&logo=latex&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Cisco-1BA0D7?style=for-the-badge&logo=cisco&logoColor=white"/>
-</p>
+ Category | Skills                                                                         |
+ :--- |:-------------------------------------------------------------------------------|
+ **📱 Mobile Development** | `Flutter` `Dart` `Java` `Kotlin` `Android Studio`                              |
+ **⚙️ Backend & DB** | `Node.js` `Firebase` `MySQL` `PHP` `REST API`                                  |
+ **🛠️ Tools & DevOps** | `Git` `GitHub` `VS Code` `Bash`                                                |
+ **🎨 Design & Others** | `AutoCAD` `LaTeX` `Cisco` `Python` `C/C++` `Arduino` `React` `HTML` `CSS` `JS` |
 
 ---
 
@@ -93,15 +83,6 @@ I’m a Flutter developer who enjoys building mobile applications that are pract
 
 ---
 
-## 🔝 Top Repositories
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Fuad2e3&repo=DeenSphere&theme=tokyonight" />
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Fuad2e3&repo=Unimate&theme=tokyonight" />
-</p>
-
----
-
 ## 📊 GitHub Stats
 
 <p align="center">
@@ -111,6 +92,14 @@ I’m a Flutter developer who enjoys building mobile applications that are pract
 
 <p align="center">
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Fuad2e3&theme=tokyonight"/>
+</p>
+
+---
+
+## 📈 Weekly Activity Graph
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Fuad2e3&theme=tokyonight&area=true&hide_border=true" width="100%" />
 </p>
 
 ---
