@@ -63,7 +63,6 @@ I’m a Flutter developer who enjoys building mobile applications that are pract
 | **📨 SMS App**  | Private Code / Live Demo | `Flutter` `Dart` `Node.js` `MySQL` `REST API` |
 | **💪 Pyrova**   | Private Code / Live Demo | `Flutter` `Dart` `Node.js` `MySQL` `REST API` |
 | **Away Scholars**   | Private Code / Live Demo | `Flutter` `Dart` `Node.js` `MySQL` `REST API` |
-| **🕸️Data Miner**   | Private Code / Live Demo | `Flutter` `Dart` `Node.js` `MySQL` `REST API` |
 | **🥘 Khidda**   | Private Code / Live Demo | `Flutter` `Dart` `Node.js` `MySQL` `REST API` |
 
 
