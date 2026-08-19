@@ -54,7 +54,7 @@ I’m a Flutter developer who enjoys building mobile applications that are pract
 
 ### ✅ Complete Projects
 
-#### Android & Cross-Platform Applications
+#### Android & Cross-Platform & Website Applications
 
 | Project         | Status | Tech Stack |
 |:----------------| :--- | :--- |
@@ -64,6 +64,8 @@ I’m a Flutter developer who enjoys building mobile applications that are pract
 | **💪 Pyrova**   | Private Code / Live Demo | `Flutter` `Dart` `Node.js` `MySQL` `REST API` |
 | **Away Scholars**   | Private Code / Live Demo | `Flutter` `Dart` `Node.js` `MySQL` `REST API` |
 | **🥘 Khidda**   | Private Code / Live Demo | `Flutter` `Dart` `Node.js` `MySQL` `REST API` |
+| **🕸️ Data Miner**   | Private Code / Live Demo | `Flutter` `Dart` `Node.js` `MySQL` `REST API` |
+| **🕸️ Lead Generation**   | Private Code / Live Demo | `Html` `Javascript ` `Node.js` `MySQL` `REST API` |
 
 
 
