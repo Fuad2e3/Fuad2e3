@@ -122,3 +122,11 @@ I’m a Flutter developer who enjoys building mobile applications that are pract
 <p align="center">
   <b>⚡ Always learning. Always building. Always evolving.</b>
 </p>
+
+<div align="center">
+
+**Developed with ❤️ by Fuad**  
+*Developed by Softece*
+
+</div>
+
