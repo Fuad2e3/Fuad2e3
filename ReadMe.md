@@ -67,8 +67,6 @@ I’m a Flutter developer who enjoys building mobile applications that are pract
 | **🕸️ Data Miner**   | Private Code / Live Demo | `Flutter` `Dart` `Node.js` `MySQL` `REST API` |
 | **🕸️ Lead Generation**   | Private Code / Live Demo | `Html` `Javascript ` `Node.js` `MySQL` `REST API` |
 
-
-
 #### Academic & Specialized Projects
 
 | Category | Project | Tech Stack |
@@ -118,15 +116,12 @@ I’m a Flutter developer who enjoys building mobile applications that are pract
 
 ---
 
-
 <p align="center">
   <b>⚡ Always learning. Always building. Always evolving.</b>
 </p>
 
 <div align="center">
 
-**Developed with ❤️ by Fuad**  
-*Developed by Softece*
+**Developed ❤️ by Softece**
 
 </div>
-
