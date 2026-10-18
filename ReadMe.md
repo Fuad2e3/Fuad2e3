@@ -19,7 +19,9 @@
   <a href="https://linkedin.com/in/fuad2e3">
     <img src="https://img.shields.io/badge/Status-Open_For_Opportunities-brightgreen?style=for-the-badge" alt="Status" />
   </a>
-  <img src="https://komarev.com/ghpvc/?username=Fuad2e3&label=Profile%20Views&color=007ACC&style=for-the-badge" alt="Profile Views" />
+  <a href="https://github.com/Fuad2e3">
+    <img src="https://img.shields.io/badge/Focus-Flutter%20%26%20Cross--Platform-02569B?style=for-the-badge&logo=flutter&logoColor=white" alt="Focus" />
+  </a>
 </p>
 
 ---
@@ -202,10 +204,12 @@ I am a passionate **Full Stack & Mobile Application Developer** dedicated to bui
 
 ---
 
-## 📈 Activity Graph
+## 📈 GitHub Contribution Activity
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Fuad2e3&theme=tokyonight&area=true&hide_border=true&radius=8" width="100%" alt="Activity Graph" />
+  <a href="https://github.com/Fuad2e3">
+    <img src="https://ghchart.rshah.org/00C2FF/Fuad2e3" alt="Fuad's GitHub Contribution Chart" width="100%" />
+  </a>
 </p>
 
 ---
