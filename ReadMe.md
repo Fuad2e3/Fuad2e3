@@ -31,8 +31,8 @@
 I am a passionate **Full Stack & Mobile Application Developer** dedicated to building high-performance, aesthetically pleasing, and production-ready applications. With extensive experience in **Flutter cross-platform engineering**, **Node.js/Express**, I transform ideas into reliable, user-centric software solutions across mobile, web, and cloud.
 
 - 📱 **Mobile Specialization:** Flutter, Dart, Java, Kotlin, Android Studio, Cross-Platform Architecture
-- 🌐 **Web & Cloud:** Node.js, Express.js, Cloudflare (Workers, Pages, D1 SQL, R2), FastAPI, REST APIs
-- 🗄️ **Databases & State:** MySQL, SQLite, Firebase Firestore, Cloudflare D1, Bloc/Provider
+- 🌐 **Web & Cloud:** Node.js, Express.js, FastAPI, REST APIs
+- 🗄️ **Databases & State:** MySQL, SQLite, Firebase Firestore
 - 🤖 **AI & Innovations:** Google Gemini AI Integration, Automation Pipelines (n8n), Payment Gateways (Stripe)
 - 🎯 **Philosophy:** *"Clean architecture, intuitive UI, and maintainable code create products that make an impact."*
 
