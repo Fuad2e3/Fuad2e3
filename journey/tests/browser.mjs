@@ -24,7 +24,7 @@ function ensureVendor() {
 export async function openPage(url, { args = [], context = {}, viewport = { width: 1280, height: 800 } } = {}) {
   ensureVendor();
   const browser = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', ...args] });
-  const ctx = await browser.newContext({ viewport, ...context });
+  const ctx = await browser.newContext({ viewport, colorScheme: 'dark', ...context });
   await ctx.route(/^https:\/\/(cdn\.jsdelivr\.net|fonts\.(googleapis|gstatic)\.com)\//, async (route) => {
     const u = route.request().url();
     const hit = MAP.find(([prefix]) => u.startsWith(prefix));

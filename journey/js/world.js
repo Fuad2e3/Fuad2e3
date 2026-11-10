@@ -225,7 +225,10 @@ export function createWorld(scene, stations) {
   grid.material.opacity = 0.45;
   const stars = starfield(2600, 220);
   const motes = dust(pathPoints, 700);
-  scene.add(sky(), planet(), floor, grid, stars, motes, road(pathPoints));
+  const skyDome = sky();
+  const planetGroup = planet();
+  const roadGroup = road(pathPoints);
+  scene.add(skyDome, planetGroup, floor, grid, stars, motes, roadGroup);
 
   // energy pulses running along the road
   const pulses = [];
@@ -262,6 +265,23 @@ export function createWorld(scene, stations) {
   return {
     pathPoints,
     anchors,
+    /** @param {import('./theme.js').THEMES['night']} t */
+    setTheme(t) {
+      skyDome.material.uniforms.top.value.set(t.skyTop);
+      skyDome.material.uniforms.horizon.value.set(t.skyHorizon);
+      floor.material.color.set(t.floor);
+      grid.material.color.set(t.grid);
+      grid.material.opacity = t.gridOpacity;
+      const [surface, ...lines] = roadGroup.children;
+      surface.material.color.set(t.road);
+      surface.material.emissive.set(t.roadEmissive);
+      lines[0].material.color.set(t.edge);
+      lines[1].material.color.set(t.edge);
+      stars.visible = t.stars > 0;
+      stars.material.opacity = t.stars;
+      planetGroup.children[1].material.opacity = t.planet;
+      planetGroup.visible = t.planet > 0.3;
+    },
     setActiveStation(i) { active = i; },
     update(t, dt) {
       landmarks.forEach((lm, i) => {

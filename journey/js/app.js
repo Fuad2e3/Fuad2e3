@@ -2,6 +2,7 @@ import { STATIONS } from './data.js';
 import { renderSections, renderDots, setActiveDot } from './render-sections.js';
 import { bindScroll, revealCards } from './scroll.js';
 import { localProgress, positionAt, stationIndexAt } from './journey-math.js';
+import { watchTheme } from './theme.js';
 
 const test = new URLSearchParams(location.search).has('test');
 const dots = document.getElementById('dots');
@@ -43,6 +44,11 @@ try {
   console.warn('3D journey unavailable, showing the plain page.', err);
 }
 if (!api) document.body.classList.add('no-webgl');
+
+watchTheme((name) => {
+  document.documentElement.dataset.theme = name;
+  api?.setTheme(name);
+});
 
 const sections = [...document.querySelectorAll('.station')];
 const bar = document.getElementById('progress-bar');

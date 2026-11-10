@@ -7,6 +7,7 @@ import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 import { createWorld } from './world.js';
 import { createCharacter } from './character.js';
 import { positionAt, walkPhase, stationIndexAt, clamp01 } from './journey-math.js';
+import { THEMES } from './theme.js';
 
 const BG = 0x0b1020;
 const JUMP = 0.15;
@@ -15,12 +16,15 @@ const shortestAngle = (a, b) => Math.atan2(Math.sin(b - a), Math.cos(b - a));
 
 export function start(canvas, { stations, test = false, onStation = () => {}, extras = [], photoUrl } = {}) {
   let renderer;
+  let small = false;
   try {
-    renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: test, powerPreference: 'high-performance' });
+    // lighter rendering on small screens (phones): no MSAA, lower pixel ratio
+    small = Math.min(innerWidth, innerHeight) < 700;
+    renderer = new THREE.WebGLRenderer({ canvas, antialias: !small, preserveDrawingBuffer: test, powerPreference: 'high-performance' });
   } catch {
     return null;
   }
-  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.setPixelRatio(Math.min(devicePixelRatio, small ? 1.5 : 2));
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.setClearColor(BG);
 
@@ -28,7 +32,8 @@ export function start(canvas, { stations, test = false, onStation = () => {}, ex
   scene.fog = new THREE.FogExp2(BG, 0.024);
   const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 500);
 
-  scene.add(new THREE.HemisphereLight(0x9cc3ff, 0x0b1020, 1.1));
+  const hemi = new THREE.HemisphereLight(0x9cc3ff, 0x0b1020, 1.1);
+  scene.add(hemi);
   const sun = new THREE.DirectionalLight(0xffffff, 1.4);
   sun.position.set(6, 12, 8);
   scene.add(sun);
@@ -56,6 +61,22 @@ export function start(canvas, { stations, test = false, onStation = () => {}, ex
   const bloom = new UnrealBloomPass(new THREE.Vector2(1, 1), 0.8, 0.5, 0.3);
   composer.addPass(bloom);
   composer.addPass(new OutputPass());
+
+  let theme = 'night';
+  function setTheme(name) {
+    const t = THEMES[name];
+    theme = name;
+    renderer.setClearColor(t.bg);
+    scene.fog.color.set(t.bg);
+    scene.fog.density = t.fogDensity;
+    hemi.intensity = t.hemi;
+    sun.intensity = t.sun;
+    bloom.strength = t.bloom;
+    bloom.threshold = t.bloomThreshold;
+    renderer.toneMappingExposure = t.exposure;
+    world.setTheme(t);
+    if (!running) frame(performance.now() / 1000, 1 / 60);
+  }
 
   const ctx = { scene, camera, world, stations, pathPoints: world.pathPoints };
   const updaters = extras.map((make) => make(ctx)).filter(Boolean);
@@ -167,12 +188,13 @@ export function start(canvas, { stations, test = false, onStation = () => {}, ex
 
   return {
     setProgress(v) { target = clamp01(v); },
+    setTheme,
     renderOnce(v = target) { target = p = clamp01(v); firstFrame = true; frame(performance.now() / 1000, 1 / 60); },
     pause() { running = false; cancelAnimationFrame(raf); },
     resume() { if (!running && animating) { running = true; last = performance.now(); raf = requestAnimationFrame(loop); } },
     stopAnimating() { animating = false; running = false; cancelAnimationFrame(raf); },
     resize,
-    state: () => ({ progress: p, target, station, facing, animating: animating && running, aspect: camera.aspect, heroPhoto: hero.heroPhoto }),
+    state: () => ({ progress: p, target, station, facing, animating: animating && running, aspect: camera.aspect, heroPhoto: hero.heroPhoto, theme }),
     dispose() { cancelAnimationFrame(raf); removeEventListener('resize', onResize); renderer.dispose(); },
   };
 }

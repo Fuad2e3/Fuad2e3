@@ -128,3 +128,26 @@ test('hero wears the photo face', () => withPage({}, async ({ page, errors }) =>
   await page.waitForFunction(() => window.__journey.state().heroPhoto === true, null, { timeout: 10000 });
   assert.deepEqual(errors, []);
 }));
+
+test('day theme follows a light device', () => withPage({ context: { colorScheme: 'light' } }, async ({ page }) => {
+  await page.waitForFunction(() => window.__journey?.ready, null, { timeout: 30000 });
+  assert.equal(await page.evaluate(() => window.__journey.state().theme), 'day');
+  const bg = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
+  const [r, g, b] = bg.match(/\d+/g).map(Number);
+  assert.ok(r + g + b > 500, `body background ${bg} is not light`);
+}));
+
+test('theme switches live when the device changes', () => withPage({}, async ({ page }) => {
+  await page.waitForFunction(() => window.__journey?.ready, null, { timeout: 30000 });
+  assert.equal(await page.evaluate(() => window.__journey.state().theme), 'night');
+  await page.emulateMedia({ colorScheme: 'light' });
+  await page.waitForTimeout(300);
+  assert.equal(await page.evaluate(() => window.__journey.state().theme), 'day');
+}));
+
+test('landscape phone has no horizontal overflow and a reachable card', () => withPage({ viewport: { width: 740, height: 360 } }, async ({ page }) => {
+  await page.waitForSelector('.station');
+  assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= 740));
+  const h = await page.evaluate(() => document.querySelector('#station-mobile .card').getBoundingClientRect().height);
+  assert.ok(h <= 360, `card ${h}px taller than the 360px viewport`);
+}));

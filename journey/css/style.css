@@ -102,3 +102,52 @@ main { position: relative; z-index: 2; }
   .projects li { flex: 0 0 82%; scroll-snap-align: start; }
   .card { position: sticky; bottom: 16px; }
 }
+
+/* ---------- Day theme: follows the device (html[data-theme] is set by JS; media query covers no-JS) ---------- */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="night"]) { color-scheme: light; }
+}
+:root[data-theme="day"] {
+  --bg: #cfe6ff;
+  --ink: #0f172a;
+  --muted: #475569;
+  --accent: #0091d5;
+  --ai: #6d4fe0;
+  --glass: rgba(255, 255, 255, 0.62);
+  --line: rgba(15, 23, 42, 0.12);
+}
+:root[data-theme="day"] body { background: linear-gradient(180deg, #3d8bff 0%, #cfe6ff 55%, #e6f3ff 100%) fixed, var(--bg); }
+:root[data-theme="day"] .card { box-shadow: 0 20px 50px rgba(30, 64, 120, .18), inset 0 1px 0 rgba(255, 255, 255, .7); }
+:root[data-theme="day"] .project { background: rgba(255, 255, 255, .55); }
+:root[data-theme="day"] .project:hover, :root[data-theme="day"] .project:focus-visible { background: #fff; }
+:root[data-theme="day"] .project.current { background: rgba(0, 145, 213, .12); }
+:root[data-theme="day"] .station[data-id="intro"] h1 { background-image: linear-gradient(100deg, #0f172a 10%, #0091d5 50%, #6d4fe0 85%); }
+:root[data-theme="day"] .station[data-id="intro"] .lead, :root[data-theme="day"] .station[data-id="contact"] .lead { color: #1e293b; }
+:root[data-theme="day"] .links a:hover, :root[data-theme="day"] .links a:focus-visible { color: #fff; }
+:root[data-theme="day"] .dots a { border-color: #1e3a5f; }
+@media (max-width: 640px) {
+  :root[data-theme="day"] .card { background: rgba(255, 255, 255, .8); }
+}
+
+/* ---------- Any device ---------- */
+.brand { top: max(18px, env(safe-area-inset-top)); left: max(22px, env(safe-area-inset-left)); }
+.dots { right: max(18px, env(safe-area-inset-right)); }
+.station { min-height: 100dvh; padding-bottom: max(72px, env(safe-area-inset-bottom)); }
+@media (hover: none) {
+  .project:hover { transform: none; }
+}
+/* landscape phones & short screens: keep each card inside the viewport */
+@media (max-height: 520px) {
+  .station { padding-top: 56px; padding-bottom: 16px; align-items: flex-start; }
+  .card { width: min(520px, 58vw); padding: 16px 18px; top: 52px; bottom: auto; max-height: calc(100dvh - 68px); overflow-y: auto; }
+  .station h2 { font-size: 22px; margin-bottom: 10px; }
+  .projects { display: flex; flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .projects li { flex: 0 0 72%; scroll-snap-align: start; }
+  .station[data-id="intro"] h1 { font-size: 40px; }
+  .dots a span { display: none; }
+}
+/* large / 4K screens */
+@media (min-width: 1800px) {
+  html { font-size: 18px; }
+  .card { width: min(680px, 40vw); }
+}
