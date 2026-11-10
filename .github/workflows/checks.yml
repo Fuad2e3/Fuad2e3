@@ -1,0 +1,23 @@
+name: Checks
+
+on:
+  push:
+    paths: ["ReadMe.md", "journey/**", "scripts/**", ".github/workflows/checks.yml"]
+  pull_request:
+    paths: ["ReadMe.md", "journey/**", "scripts/**", ".github/workflows/checks.yml"]
+
+permissions:
+  contents: read
+
+jobs:
+  readme-and-journey:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: README rules (counts, numbering, alt text)
+        run: node scripts/check-readme.mjs && node --test scripts/*.test.mjs
+      - name: Journey data and maths (in sync with README)
+        run: node --test journey/tests/journey-math.test.mjs journey/tests/gait.test.mjs

@@ -21,7 +21,7 @@ function ensureVendor() {
   }
 }
 
-export async function openPage(url, { args = [], context = {}, viewport = { width: 1280, height: 800 } } = {}) {
+export async function openPage(url, { args = [], context = {}, viewport = { width: 1280, height: 800 }, init } = {}) {
   ensureVendor();
   const browser = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', ...args] });
   const ctx = await browser.newContext({ viewport, colorScheme: 'dark', ...context });
@@ -32,6 +32,7 @@ export async function openPage(url, { args = [], context = {}, viewport = { widt
     const body = await readFile(hit[1] + u.slice(hit[0].length).split('?')[0]);
     route.fulfill({ status: 200, body, contentType: 'text/javascript' });
   });
+  if (init) await ctx.addInitScript(init);
   const page = await ctx.newPage();
   const errors = [];
   page.on('pageerror', (e) => errors.push(String(e)));

@@ -6,7 +6,9 @@ import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js'
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 import { createWorld } from './world.js';
 import { createCharacter } from './character.js';
-import { positionAt, walkPhase, stationIndexAt, clamp01 } from './journey-math.js';
+import { positionAt, advancePhase, pathLength, stationIndexAt, clamp01 } from './journey-math.js';
+
+const STRIDE = 1.5; // world units covered by one full gait cycle of the rig (two steps)
 import { THEMES } from './theme.js';
 
 const BG = 0x0b1020;
@@ -14,7 +16,7 @@ const JUMP = 0.15;
 
 const shortestAngle = (a, b) => Math.atan2(Math.sin(b - a), Math.cos(b - a));
 
-export function start(canvas, { stations, test = false, onStation = () => {}, extras = [], photoUrl } = {}) {
+export function start(canvas, { stations, test = false, onStation = () => {}, onLost = () => {}, extras = [], photoUrl } = {}) {
   let renderer;
   let small = false;
   try {
@@ -43,7 +45,11 @@ export function start(canvas, { stations, test = false, onStation = () => {}, ex
   scene.add(rim);
 
   const world = createWorld(scene, stations);
-  const hero = createCharacter({ photoUrl });
+  let photoRendered = false;
+  // the face texture arrives after the first frames; when the loop is stopped (reduced motion) draw once more
+  const hero = createCharacter({ photoUrl, onChange: () => { if (!running) { frame(performance.now() / 1000, 1 / 60); } photoRendered = true; } });
+  const length = pathLength(world.pathPoints);
+  let walkPh = 0;
   scene.add(hero.group);
 
   // glowing footprints that fade out
@@ -91,6 +97,7 @@ export function start(canvas, { stations, test = false, onStation = () => {}, ex
   let raf = 0;
   const camPos = new THREE.Vector3();
   const look = new THREE.Vector3();
+  const lookAt = new THREE.Vector3();
   let firstFrame = true;
   let idle = 0;
 
@@ -131,7 +138,8 @@ export function start(canvas, { stations, test = false, onStation = () => {}, ex
     hero.group.position.set(pos[0], 0, pos[2]);
     hero.group.rotation.y = yaw;
 
-    const phase = walkPhase(p);
+    walkPh = advancePhase(walkPh, moved * length, STRIDE);
+    const phase = walkPh;
     const i = stationIndexAt(p, stations);
     const id = stations[i].id;
     hero.update(phase, walking ? speed : 0, dt, { wave: id === 'intro' || id === 'contact' });
@@ -158,7 +166,7 @@ export function start(canvas, { stations, test = false, onStation = () => {}, ex
     const wide = camera.aspect > 1.1;
     const frameX = wide ? -2.2 : 0;
     camPos.set(pos[0] + frameX, wide ? 3 : 4.4, pos[2] + (wide ? 7 : 11));
-    const lookAt = new THREE.Vector3(pos[0] + frameX, wide ? 1.1 : 0.2, pos[2] - 2);
+    lookAt.set(pos[0] + frameX, wide ? 1.1 : 0.2, pos[2] - 2);
     if (firstFrame) {
       camera.position.copy(camPos);
       look.copy(lookAt);
@@ -176,13 +184,25 @@ export function start(canvas, { stations, test = false, onStation = () => {}, ex
 
   let last = performance.now();
   function loop(now) {
-    raf = requestAnimationFrame(loop);
     const dt = Math.min(0.05, (now - last) / 1000);
-    if (dt < 1 / 61) return; // cap at ~60fps
     last = now;
-    frame(now / 1000, dt);
+    try {
+      frame(now / 1000, dt);
+    } catch (err) {
+      console.error('3D journey stopped:', err); // stop instead of throwing 60 times a second
+      running = false;
+      return;
+    }
+    raf = requestAnimationFrame(loop);
   }
   raf = requestAnimationFrame(loop);
+  canvas.addEventListener('webglcontextlost', (e) => {
+    e.preventDefault();
+    running = false;
+    animating = false;
+    cancelAnimationFrame(raf);
+    onLost();
+  });
   const onResize = () => { resize(); if (!running) frame(performance.now() / 1000, 1 / 60); };
   addEventListener('resize', onResize);
 
@@ -194,7 +214,7 @@ export function start(canvas, { stations, test = false, onStation = () => {}, ex
     resume() { if (!running && animating) { running = true; last = performance.now(); raf = requestAnimationFrame(loop); } },
     stopAnimating() { animating = false; running = false; cancelAnimationFrame(raf); },
     resize,
-    state: () => ({ progress: p, target, station, facing, animating: animating && running, aspect: camera.aspect, heroPhoto: hero.heroPhoto, theme }),
+    state: () => ({ progress: p, target, station, facing, animating: animating && running, aspect: camera.aspect, heroPhoto: hero.heroPhoto, photoRendered, theme }),
     dispose() { cancelAnimationFrame(raf); removeEventListener('resize', onResize); renderer.dispose(); },
   };
 }

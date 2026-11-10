@@ -39,6 +39,7 @@ try {
     onStation: (id) => setActiveDot(dots, id),
     extras: [phoneExtra],
     photoUrl: 'assets/me.jpg',
+    onLost: () => document.body.classList.add('no-webgl'),
   });
 } catch (err) {
   console.warn('3D journey unavailable, showing the plain page.', err);

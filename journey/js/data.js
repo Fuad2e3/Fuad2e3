@@ -14,7 +14,7 @@ export const STATIONS = [
     id: 'mobile',
     title: 'Mobile & Cross-Platform',
     kicker: 'Station 01',
-    color: '#02569B',
+    color: '#4FA3E0', // lighter Flutter blue: readable as 12px text on the dark card
     range: [0.08, 0.32],
     projects: [
       { name: 'Plantive', desc: 'AI plant disease diagnostics & agricultural advisor', tech: 'Java · Firebase · Gemini AI · Google Maps', url: gh('Plantive-Demo'), shot: 'plantive' },

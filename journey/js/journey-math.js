@@ -13,25 +13,45 @@ export function localProgress(progress, { range: [a, b] }) {
 
 export const walkPhase = (progress, stepsPerJourney = 60) => progress * stepsPerJourney * 2 * Math.PI;
 
+// Cumulative arc lengths per polyline, cached so per-frame calls are O(log n) and allocation-light.
+const LENGTHS = new WeakMap();
+function cumulative(points) {
+  let cum = LENGTHS.get(points);
+  if (!cum) {
+    cum = new Float64Array(points.length);
+    for (let i = 1; i < points.length; i++) {
+      const a = points[i - 1];
+      const b = points[i];
+      cum[i] = cum[i - 1] + Math.hypot(b[0] - a[0], b[1] - a[1], b[2] - a[2]);
+    }
+    LENGTHS.set(points, cum);
+  }
+  return cum;
+}
+
+/** Total arc length of a polyline. */
+export const pathLength = (points) => cumulative(points)[points.length - 1];
+
 /** Point at `progress` (0..1) of the polyline `points`, measured by arc length. */
 export function positionAt(progress, points) {
-  const seg = [];
-  let total = 0;
-  for (let i = 1; i < points.length; i++) {
-    const len = Math.hypot(...points[i].map((v, k) => v - points[i - 1][k]));
-    seg.push(len);
-    total += len;
+  const cum = cumulative(points);
+  const d = clamp01(progress) * cum[cum.length - 1];
+  let lo = 0;
+  let hi = cum.length - 1;
+  while (hi - lo > 1) {
+    const mid = (lo + hi) >> 1;
+    if (cum[mid] <= d) lo = mid;
+    else hi = mid;
   }
-  let d = clamp01(progress) * total;
-  for (let i = 0; i < seg.length; i++) {
-    if (d <= seg[i] || i === seg.length - 1) {
-      const t = seg[i] === 0 ? 0 : Math.min(1, d / seg[i]);
-      return points[i].map((v, k) => v + (points[i + 1][k] - v) * t);
-    }
-    d -= seg[i];
-  }
-  return [...points[0]];
+  const seg = cum[hi] - cum[lo];
+  const t = seg === 0 ? 0 : (d - cum[lo]) / seg;
+  const a = points[lo];
+  const b = points[hi];
+  return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t];
 }
+
+/** Walk-cycle phase after covering `distance` (either direction): one stride = 2π, never runs backwards. */
+export const advancePhase = (phase, distance, stride) => phase + (Math.abs(distance) / stride) * 2 * Math.PI;
 
 /**
  * Journey progress for a scroll position. The reading line moves from the top of the

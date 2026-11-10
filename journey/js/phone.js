@@ -1,6 +1,9 @@
 // A floating 3D phone over the Mobile station that spins and flips through app screens.
 import * as THREE from 'three';
 
+// Canvas roundRect is missing on Safari < 16 / Firefox < 112: fall back to square corners.
+const rr = (g, x, y, w, h, r) => (g.roundRect ? g.roundRect(x, y, w, h, r) : g.rect(x, y, w, h));
+
 const W = 360;
 const H = 720;
 
@@ -20,7 +23,7 @@ function mockScreen(project, color) {
   head.addColorStop(1, '#8E75FF');
   g.fillStyle = head;
   g.beginPath();
-  g.roundRect(0, 0, W, 230, [0, 0, 36, 36]);
+  rr(g, 0, 0, W, 230, [0, 0, 36, 36]);
   g.fill();
   g.fillStyle = 'rgba(255,255,255,.9)';
   g.font = '600 18px Poppins, sans-serif';
@@ -41,7 +44,7 @@ function mockScreen(project, color) {
     const top = 260 + i * 105;
     g.fillStyle = 'rgba(255,255,255,.06)';
     g.beginPath();
-    g.roundRect(24, top, W - 48, 88, 20);
+    rr(g, 24, top, W - 48, 88, 20);
     g.fill();
     g.fillStyle = i % 2 ? '#8E75FF' : color;
     g.beginPath();
@@ -54,7 +57,7 @@ function mockScreen(project, color) {
   }
   g.fillStyle = 'rgba(255,255,255,.5)';
   g.beginPath();
-  g.roundRect(W / 2 - 60, H - 26, 120, 6, 3);
+  rr(g, W / 2 - 60, H - 26, 120, 6, 3);
   g.fill();
   const tex = new THREE.CanvasTexture(c);
   tex.colorSpace = THREE.SRGBColorSpace;
