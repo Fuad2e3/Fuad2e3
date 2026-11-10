@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="1.jpg" width="120" alt="Abdullah Al Fuad" />
+</p>
+
 <h1 align="center">Hi 👋, I'm Abdullah Al Fuad</h1>
 
 <h3 align="center">
@@ -28,10 +32,10 @@
 
 ## 🧠 About Me
 
-I am a passionate **Full Stack & Mobile Application Developer** dedicated to building high-performance, aesthetically pleasing, and production-ready applications. With extensive experience in **Flutter cross-platform engineering**, **Node.js/Express**, I transform ideas into reliable, user-centric software solutions across mobile, web, and cloud.
+I am a passionate **Full Stack & Mobile Application Developer** dedicated to building high-performance, aesthetically pleasing, and production-ready applications. With extensive experience in **Flutter cross-platform engineering**, **Node.js/Express** and **Cloudflare edge infrastructure**, I transform ideas into reliable, user-centric software solutions across mobile, web, and cloud.
 
 - 📱 **Mobile Specialization:** Flutter, Dart, Java, Kotlin, Android Studio, Cross-Platform Architecture
-- 🌐 **Web & Cloud:** Node.js, Express.js, FastAPI, REST APIs
+- 🌐 **Web & Cloud:** Node.js, Express.js, FastAPI, PHP, React, Cloudflare Workers/Pages/D1/R2, REST APIs
 - 🗄️ **Databases & State:** MySQL, SQLite, Firebase Firestore
 - 🤖 **AI & Innovations:** Google Gemini AI Integration, Automation Pipelines (n8n), Payment Gateways (Stripe)
 - 🎯 **Philosophy:** *"Clean architecture, intuitive UI, and maintainable code create products that make an impact."*
@@ -41,13 +45,14 @@ I am a passionate **Full Stack & Mobile Application Developer** dedicated to bui
 ## 🚀 Tech Stack & Core Competencies
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=flutter,dart,androidstudio,java,kotlin,firebase,nodejs,express,fastapi,cloudflare,mysql,sqlite,git,github,vscode,postman,bash,python,c,cpp,react,html,css,js&perline=12" alt="Skill Icons" />
+  <img src="https://skillicons.dev/icons?i=flutter,dart,androidstudio,java,kotlin,firebase,nodejs,express,fastapi,php,cloudflare,mysql,sqlite,git,github,vscode,postman,bash,python,c,cpp,react,html,css,js&perline=12" alt="Skill Icons" />
 </p>
 
 | Category | Technologies & Tools |
 | :--- | :--- |
 | **📱 Mobile Development** | `Flutter` `Dart` `Java` `Kotlin` `Android Studio` `Material 3` `Cross-Platform` |
-| **⚙️ Backend & Cloud** | `Node.js` `Express.js` `FastAPI` `Cloudflare Workers` `Cloudflare Pages` `REST API` |
+| **🖥️ Frontend** | `React` `HTML5` `CSS3` `JavaScript` `Responsive UI` |
+| **⚙️ Backend & Cloud** | `Node.js` `Express.js` `FastAPI` `PHP` `Cloudflare Workers` `Cloudflare Pages` `REST API` |
 | **🗄️ Databases & Storage** | `MySQL` `Firebase` `SQLite` `Cloudflare D1 SQL` `Cloudflare R2` |
 | **🤖 AI & Automation** | `Google Gemini AI` `Stripe Payment` `n8n Automation` `Google Maps SDK` |
 | **🛠️ DevOps & Tooling** | `Git` `GitHub` `VS Code` `Postman` `Bash` `Linux Shell` |
@@ -66,14 +71,15 @@ I am a passionate **Full Stack & Mobile Application Developer** dedicated to bui
       </p>
       <p>A comprehensive Islamic lifestyle application featuring prayer times, Quranic tools, and AI-assisted daily utilities designed with clean architecture.</p>
       <p align="center">
-        <img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white" />
-        <img src="https://img.shields.io/badge/Dart-0175C2?style=flat-square&logo=dart&logoColor=white" />
-        <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" />
-        <img src="https://img.shields.io/badge/Gemini_AI-8E75FF?style=flat-square&logo=google-gemini&logoColor=white" />
+        <img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white" alt="Flutter" />
+        <img src="https://img.shields.io/badge/Dart-0175C2?style=flat-square&logo=dart&logoColor=white" alt="Dart" />
+        <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js" />
+        <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="MySQL" />
+        <img src="https://img.shields.io/badge/Gemini_AI-8E75FF?style=flat-square&logo=google-gemini&logoColor=white" alt="Gemini AI" />
       </p>
       <p align="center">
         <a href="https://github.com/Fuad2e3/DeenSphere-Demo">
-          <img src="https://img.shields.io/badge/View-Demo_Repo-181717?style=for-the-badge&logo=github&logoColor=white" />
+          <img src="https://img.shields.io/badge/View-Demo_Repo-181717?style=for-the-badge&logo=github&logoColor=white" alt="DeenSphere demo repository" />
         </a>
       </p>
     </td>
@@ -84,14 +90,14 @@ I am a passionate **Full Stack & Mobile Application Developer** dedicated to bui
       </p>
       <p>Intelligent healthcare ecosystem utilizing Google Gemini AI for smart symptom analysis, homeopathic recommendations, and clinical patient tracking.</p>
       <p align="center">
-        <img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white" />
-        <img src="https://img.shields.io/badge/Dart-0175C2?style=flat-square&logo=dart&logoColor=white" />
-        <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" />
-        <img src="https://img.shields.io/badge/Gemini_AI-8E75FF?style=flat-square&logo=google-gemini&logoColor=white" />
+        <img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white" alt="Flutter" />
+        <img src="https://img.shields.io/badge/Dart-0175C2?style=flat-square&logo=dart&logoColor=white" alt="Dart" />
+        <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="MySQL" />
+        <img src="https://img.shields.io/badge/Gemini_AI-8E75FF?style=flat-square&logo=google-gemini&logoColor=white" alt="Gemini AI" />
       </p>
       <p align="center">
         <a href="https://github.com/Fuad2e3/Smart-Homeopathy-Doctor-Demo">
-          <img src="https://img.shields.io/badge/View-Demo_Repo-181717?style=for-the-badge&logo=github&logoColor=white" />
+          <img src="https://img.shields.io/badge/View-Demo_Repo-181717?style=for-the-badge&logo=github&logoColor=white" alt="Smart Homeopathy Doctor demo repository" />
         </a>
       </p>
     </td>
@@ -104,14 +110,14 @@ I am a passionate **Full Stack & Mobile Application Developer** dedicated to bui
       </p>
       <p>Smart agriculture platform enabling instant plant disease diagnosis via Gemini AI, geo-location mapping with Google Maps, and real-time farmer resources.</p>
       <p align="center">
-        <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" />
-        <img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black" />
-        <img src="https://img.shields.io/badge/Gemini_AI-8E75FF?style=flat-square&logo=google-gemini&logoColor=white" />
-        <img src="https://img.shields.io/badge/Google_Maps-4285F4?style=flat-square&logo=googlemaps&logoColor=white" />
+        <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java" />
+        <img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black" alt="Firebase" />
+        <img src="https://img.shields.io/badge/Gemini_AI-8E75FF?style=flat-square&logo=google-gemini&logoColor=white" alt="Gemini AI" />
+        <img src="https://img.shields.io/badge/Google_Maps-4285F4?style=flat-square&logo=googlemaps&logoColor=white" alt="Google Maps" />
       </p>
       <p align="center">
         <a href="https://github.com/Fuad2e3/Plantive-Demo">
-          <img src="https://img.shields.io/badge/View-Demo_Repo-181717?style=for-the-badge&logo=github&logoColor=white" />
+          <img src="https://img.shields.io/badge/View-Demo_Repo-181717?style=for-the-badge&logo=github&logoColor=white" alt="Plantive demo repository" />
         </a>
       </p>
     </td>
@@ -122,17 +128,17 @@ I am a passionate **Full Stack & Mobile Application Developer** dedicated to bui
       </p>
       <p>Edge-native web agency platforms with integrated client portals, sprint tracking, and distributed edge SQL database infrastructure.</p>
       <p align="center">
-        <img src="https://img.shields.io/badge/Cloudflare_Pages-F38020?style=flat-square&logo=cloudflare&logoColor=white" />
-        <img src="https://img.shields.io/badge/Cloudflare_D1-F38020?style=flat-square&logo=sqlite&logoColor=white" />
-        <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" />
-        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
+        <img src="https://img.shields.io/badge/Cloudflare_Pages-F38020?style=flat-square&logo=cloudflare&logoColor=white" alt="Cloudflare Pages" />
+        <img src="https://img.shields.io/badge/Cloudflare_D1-F38020?style=flat-square&logo=sqlite&logoColor=white" alt="Cloudflare D1" />
+        <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI" />
+        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript" />
       </p>
       <p align="center">
         <a href="https://softhika.com">
-          <img src="https://img.shields.io/badge/Live-Website-00C2FF?style=for-the-badge&logo=googlechrome&logoColor=white" />
+          <img src="https://img.shields.io/badge/Live-Website-00C2FF?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Softhika & Softece live website" />
         </a>
         <a href="https://github.com/Fuad2e3/Softhika-Demo">
-          <img src="https://img.shields.io/badge/Demo_Repo-181717?style=for-the-badge&logo=github&logoColor=white" />
+          <img src="https://img.shields.io/badge/Demo_Repo-181717?style=for-the-badge&logo=github&logoColor=white" alt="Softhika & Softece demo repository" />
         </a>
       </p>
     </td>
