@@ -39,6 +39,7 @@ try {
     onStation: (id) => setActiveDot(dots, id),
     extras: [phoneExtra],
     photoUrl: 'assets/me.jpg',
+    modelUrl: 'assets/me.glb', // optional realistic avatar (see journey/assets/README.md)
     onLost: () => document.body.classList.add('no-webgl'),
   });
 } catch (err) {
