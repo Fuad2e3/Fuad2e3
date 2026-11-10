@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { checkReadme } from './check-readme.mjs';
 
 const row = (n) => `| ${n} | **P${n}** | d | t | l |`;
@@ -58,5 +58,13 @@ test('avatar used', () => {
 });
 
 test('real README passes', () => {
-  assert.deepEqual(checkReadme(readFileSync(new URL('../ReadMe.md', import.meta.url), 'utf8')), []);
+  const root = new URL('../', import.meta.url);
+  assert.deepEqual(checkReadme(readFileSync(new URL('ReadMe.md', root), 'utf8'), { exists: (p) => existsSync(new URL(p, root)) }), []);
+});
+
+test('local images must exist', () => {
+  const md = '<img src="1.jpg" alt="me" /><img src="nope/missing.svg" alt="x" /><source srcset="also/missing.svg" />';
+  const problems = checkReadme(md, { exists: (p) => p === '1.jpg' });
+  assert.ok(problems.includes('missing local image: nope/missing.svg'), problems.join('\n'));
+  assert.ok(problems.includes('missing local image: also/missing.svg'), problems.join('\n'));
 });
