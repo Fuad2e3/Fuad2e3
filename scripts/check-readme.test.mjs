@@ -57,6 +57,6 @@ test('avatar used', () => {
   assert.ok(problems.includes('avatar 1.jpg not referenced'), problems.join('\n'));
 });
 
-test('real README passes', { todo: 'enabled at the end of README plan Task 3' }, () => {
+test('real README passes', () => {
   assert.deepEqual(checkReadme(readFileSync(new URL('../ReadMe.md', import.meta.url), 'utf8')), []);
 });

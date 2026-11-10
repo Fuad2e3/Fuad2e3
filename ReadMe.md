@@ -218,12 +218,14 @@ I am a passionate **Full Stack & Mobile Application Developer** dedicated to bui
 ## 📊 GitHub Analytics
 
 <p align="center">
-  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=Fuad2e3&show_icons=true&theme=tokyonight&hide_border=true&border_radius=8" alt="GitHub Stats" />
-  <img width="49%" src="https://streak-stats.demolab.com/?user=Fuad2e3&theme=tokyonight&hide_border=true&border_radius=8" alt="Streak Stats" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="profile-3d-contrib/profile-night-rainbow.svg" />
+    <img src="profile-3d-contrib/profile-gitblue.svg" width="100%" alt="3D GitHub contribution graph" />
+  </picture>
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Fuad2e3&layout=compact&theme=tokyonight&hide_border=true&border_radius=8&langs_count=8" alt="Top Languages" />
+  <img width="70%" src="https://streak-stats.demolab.com/?user=Fuad2e3&theme=tokyonight&hide_border=true&border_radius=8" alt="Streak Stats" />
 </p>
 
 ---
@@ -231,9 +233,10 @@ I am a passionate **Full Stack & Mobile Application Developer** dedicated to bui
 ## 📈 GitHub Contribution Activity
 
 <p align="center">
-  <a href="https://github.com/Fuad2e3">
-    <img src="https://ghchart.rshah.org/00C2FF/Fuad2e3" alt="Fuad's GitHub Contribution Chart" width="100%" />
-  </a>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Fuad2e3/Fuad2e3/output/github-snake-dark.svg" />
+    <img src="https://raw.githubusercontent.com/Fuad2e3/Fuad2e3/output/github-snake.svg" width="100%" alt="Snake eating my contribution graph" />
+  </picture>
 </p>
 
 ---
