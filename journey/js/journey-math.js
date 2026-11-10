@@ -32,3 +32,24 @@ export function positionAt(progress, points) {
   }
   return [...points[0]];
 }
+
+/**
+ * Journey progress for a scroll position. The reading line moves from the top of the
+ * document (scrollY = 0) to the bottom (scrollY = max), and the section it is in maps
+ * linearly onto that station's range.
+ * @param {number} scrollY @param {number} viewport @param {Array<[number, number]>} spans section [top, bottom]
+ */
+export function progressFromScroll(scrollY, viewport, spans, stations) {
+  const docH = spans.at(-1)[1];
+  const max = Math.max(1, docH - viewport);
+  const y = clamp01(scrollY / max) * max;
+  const line = y + viewport * (y / max);
+  for (let i = 0; i < spans.length; i++) {
+    const [top, bottom] = spans[i];
+    if (line < bottom || i === spans.length - 1) {
+      const [a, b] = stations[i].range;
+      return a + (b - a) * clamp01((line - top) / (bottom - top));
+    }
+  }
+  return 1;
+}
