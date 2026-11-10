@@ -151,3 +151,5 @@ main { position: relative; z-index: 2; }
   html { font-size: 18px; }
   .card { width: min(680px, 40vw); }
 }
+/* day: darken station colours used as small text so they stay readable on white glass */
+:root[data-theme="day"] .kicker, :root[data-theme="day"] .project em { color: color-mix(in srgb, var(--station) 60%, #0f172a); }
