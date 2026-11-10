@@ -80,11 +80,11 @@
 - Modify: `scripts/check-readme.test.mjs` (un-`todo` `real README passes`)
 
 **Interfaces:**
-- Produces (after first run): `profile-3d-contrib/profile-night-rainbow.svg` and `profile-3d-contrib/profile-gitblue.svg` on the default branch; `github-snake.svg` and `github-snake-dark.svg` on branch `output`.
+- Produces (after first run): `profile-3d-contrib/profile-night-rainbow.svg` and `profile-3d-contrib/profile-green-animate.svg` on the default branch; `github-snake.svg` and `github-snake-dark.svg` on branch `output`.
 
 - [ ] **Step 1: `profile-3d.yml`.** Triggers: `schedule: cron "17 18 * * *"` (00:17 Asia/Dhaka) + `workflow_dispatch`. `permissions: contents: write`. Steps: `actions/checkout@v4`, `yoshi389111/github-profile-3d-contrib@0.7.1` with `env: GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}, USERNAME: ${{ github.repository_owner }}`, then commit `profile-3d-contrib/` as `github-actions[bot]` with message `chore: update 3D contribution graph` (skip commit when no diff).
 - [ ] **Step 2: `snake.yml`.** Same triggers/permissions. `Platane/snk@v3` with `github_user_name: ${{ github.repository_owner }}` and outputs `dist/github-snake.svg` and `dist/github-snake-dark.svg?palette=github-dark`; publish `dist` to branch `output` with `crazy-max/ghaction-github-pages@v4` (`target_branch: output`, `build_dir: dist`).
-- [ ] **Step 3: README Analytics.** Delete both `github-readme-stats.vercel.app` images. Put the 3D graph in their place inside `<picture>`: `<source media="(prefers-color-scheme: dark)" srcset="profile-3d-contrib/profile-night-rainbow.svg">`, fallback `<img src="profile-3d-contrib/profile-gitblue.svg" width="100%" alt="3D GitHub contribution graph">`. Keep the streak-stats image (add `alt`).
+- [ ] **Step 3: README Analytics.** Delete both `github-readme-stats.vercel.app` images. Put the 3D graph in their place inside `<picture>`: `<source media="(prefers-color-scheme: dark)" srcset="profile-3d-contrib/profile-night-rainbow.svg">`, fallback `<img src="profile-3d-contrib/profile-green-animate.svg" width="100%" alt="3D GitHub contribution graph">`. Keep the streak-stats image (add `alt`).
 - [ ] **Step 4: README Contribution Activity.** Replace the `ghchart.rshah.org` image with a `<picture>` of the snake: dark `https://raw.githubusercontent.com/Fuad2e3/Fuad2e3/output/github-snake-dark.svg`, light `.../output/github-snake.svg`, `width="100%"`, `alt="Snake eating my contribution graph"`.
 - [ ] **Step 5: Run** `node --test scripts/` and `node scripts/check-readme.mjs` → PASS / exit 0.
 - [ ] **Step 6: Validate YAML:** `python3 -c "import yaml;[yaml.safe_load(open(f'.github/workflows/{f}.yml')) for f in ('profile-3d','snake')]"` → no error.

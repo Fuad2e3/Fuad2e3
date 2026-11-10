@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 // Checks the profile README's invariants. Usage: node scripts/check-readme.mjs
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
 const BANNED_HOSTS = ['github-readme-stats.vercel.app'];
 const AVATAR = '1.jpg';
 
 /** @param {string} md @returns {string[]} problems, empty when the README is fine */
-export function checkReadme(md) {
+export function checkReadme(md, { exists = () => true } = {}) {
   const problems = [];
   const lines = md.split('\n');
 
@@ -53,12 +53,20 @@ export function checkReadme(md) {
   for (const host of BANNED_HOSTS) if (md.includes(host)) problems.push(`banned host: ${host}`);
   if (!md.includes(AVATAR)) problems.push(`avatar ${AVATAR} not referenced`);
 
+  // repo-relative images (img src / picture srcset) must be committed
+  for (const m of md.matchAll(/\b(?:src|srcset)="([^"]+)"/g)) {
+    const path = m[1];
+    if (/^(https?:|data:|#)/.test(path)) continue;
+    if (!exists(path)) problems.push(`missing local image: ${path}`);
+  }
+
   return problems;
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const path = new URL('../ReadMe.md', import.meta.url);
-  const problems = checkReadme(readFileSync(path, 'utf8'));
+  const root = new URL('../', import.meta.url);
+  const problems = checkReadme(readFileSync(path, 'utf8'), { exists: (p) => existsSync(new URL(p, root)) });
   for (const p of problems) console.log(`✗ ${p}`);
   console.log(problems.length ? `${problems.length} problem(s)` : '✓ ReadMe.md OK');
   process.exit(problems.length ? 1 : 0);
