@@ -32,7 +32,9 @@ export function start(canvas, { stations, test = false, onStation = () => {}, ex
   const sun = new THREE.DirectionalLight(0xffffff, 1.4);
   sun.position.set(6, 12, 8);
   scene.add(sun);
-  const rim = new THREE.PointLight(0x00c2ff, 6, 9, 1.6);
+  const rim = new THREE.PointLight(0x00c2ff, 9, 9, 1.6);
+  const back = new THREE.PointLight(0x8e75ff, 7, 7, 1.6); // violet back-light for the silhouette
+  scene.add(back);
   scene.add(rim);
 
   const world = createWorld(scene, stations);
@@ -146,6 +148,7 @@ export function start(canvas, { stations, test = false, onStation = () => {}, ex
     }
     camera.lookAt(look);
     rim.position.set(pos[0] - 1, 2.2, pos[2] + 1.5);
+    back.position.set(pos[0] + 1.2, 2.4, pos[2] - 1.6);
 
     composer.render(dt);
   }
