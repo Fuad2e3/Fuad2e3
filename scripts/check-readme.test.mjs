@@ -52,11 +52,6 @@ test('banned host', () => {
   assert.ok(problems.includes('banned host: github-readme-stats.vercel.app'), problems.join('\n'));
 });
 
-test('avatar used', () => {
-  const problems = checkReadme(fixture().replace('<img src="1.jpg" alt="me" />', ''));
-  assert.ok(problems.includes('avatar 1.jpg not referenced'), problems.join('\n'));
-});
-
 test('real README passes', () => {
   const root = new URL('../', import.meta.url);
   assert.deepEqual(checkReadme(readFileSync(new URL('ReadMe.md', root), 'utf8'), { exists: (p) => existsSync(new URL(p, root)) }), []);

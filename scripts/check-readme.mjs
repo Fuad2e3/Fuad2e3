@@ -4,7 +4,6 @@ import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
 const BANNED_HOSTS = ['github-readme-stats.vercel.app'];
-const AVATAR = '1.jpg';
 
 /** @param {string} md @returns {string[]} problems, empty when the README is fine */
 export function checkReadme(md, { exists = () => true } = {}) {
@@ -51,7 +50,6 @@ export function checkReadme(md, { exists = () => true } = {}) {
   }
 
   for (const host of BANNED_HOSTS) if (md.includes(host)) problems.push(`banned host: ${host}`);
-  if (!md.includes(AVATAR)) problems.push(`avatar ${AVATAR} not referenced`);
 
   // repo-relative images (img src / picture srcset) must be committed
   for (const m of md.matchAll(/\b(?:src|srcset)="([^"]+)"/g)) {

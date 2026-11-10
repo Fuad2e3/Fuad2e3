@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="1.jpg" width="120" alt="Abdullah Al Fuad" />
-</p>
-
 <h1 align="center">Hi 👋, I'm Abdullah Al Fuad</h1>
 
 <h3 align="center">
@@ -29,18 +25,6 @@
   </a>
   <a href="https://github.com/Fuad2e3">
     <img src="https://img.shields.io/badge/Focus-Flutter%20%26%20Cross--Platform-02569B?style=for-the-badge&logo=flutter&logoColor=white" alt="Focus" />
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://fuad2e3.github.io/Fuad2e3/">
-    <img src="https://img.shields.io/badge/Live-3D_Journey-8E75FF?style=for-the-badge&logo=threedotjs&logoColor=white" alt="Open the live 3D journey" />
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://fuad2e3.github.io/Fuad2e3/">
-    <img src="assets/journey-preview.gif" width="100%" alt="3D scroll journey preview – click to open" />
   </a>
 </p>
 
