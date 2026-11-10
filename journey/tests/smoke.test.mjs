@@ -32,3 +32,25 @@ test('no horizontal overflow at 375px', () => withPage({ viewport: { width: 375,
   const w = await page.evaluate(() => document.documentElement.scrollWidth);
   assert.ok(w <= 375, `scrollWidth ${w}`);
 }));
+
+// Share of pixels (on a 64x40 downscale) that differ clearly from the clear colour.
+const litShare = (page) => page.evaluate(() => {
+  const src = document.getElementById('scene');
+  const c = Object.assign(document.createElement('canvas'), { width: 64, height: 40 });
+  const g = c.getContext('2d');
+  g.drawImage(src, 0, 0, 64, 40);
+  const d = g.getImageData(0, 0, 64, 40).data;
+  let lit = 0;
+  for (let i = 0; i < d.length; i += 4) if (Math.abs(d[i] - 11) + Math.abs(d[i + 1] - 16) + Math.abs(d[i + 2] - 32) > 40) lit++;
+  return lit / (64 * 40);
+});
+
+test('scene boots', () => withPage({}, async ({ page, errors }) => {
+  await page.waitForFunction(() => window.__journey?.ready, null, { timeout: 30000 });
+  assert.ok(await page.evaluate(() => document.getElementById('scene').width > 0));
+  await page.evaluate(() => window.__journey.setProgress(0.5));
+  await page.waitForTimeout(1200);
+  const share = await litShare(page);
+  assert.ok(share > 0.03, `only ${(share * 100).toFixed(1)}% of pixels lit`);
+  assert.deepEqual(errors, []);
+}));
