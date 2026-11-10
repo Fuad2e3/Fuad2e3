@@ -66,3 +66,10 @@ test('progressFromScroll maps each section onto its station range', () => {
   assert.equal(progressFromScroll(-50, vh, spans, st), 0);
   assert.equal(progressFromScroll(9999, vh, spans, st), 1);
 });
+
+import { THEMES } from '../js/theme.js';
+
+test('day and night themes define the same settings', () => {
+  assert.deepEqual(Object.keys(THEMES.day).sort(), Object.keys(THEMES.night).sort());
+  assert.equal(THEMES.night.bg, '#0B1020');
+});
