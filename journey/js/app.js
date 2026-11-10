@@ -37,6 +37,7 @@ try {
     test,
     onStation: (id) => setActiveDot(dots, id),
     extras: [phoneExtra],
+    photoUrl: 'assets/me.jpg',
   });
 } catch (err) {
   console.warn('3D journey unavailable, showing the plain page.', err);
