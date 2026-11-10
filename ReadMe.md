@@ -17,6 +17,10 @@
 </p>
 
 <p align="center">
+  <img src="assets/dev-coding.svg" width="80%" alt="Animated developer coding at a desk" />
+</p>
+
+<p align="center">
   <a href="https://github.com/Fuad2e3?tab=repositories">
     <img src="https://img.shields.io/badge/Total_Repositories-40_Projects-00C2FF?style=for-the-badge&logo=github&logoColor=white" alt="40 Projects" />
   </a>
