@@ -151,3 +151,24 @@ test('landscape phone has no horizontal overflow and a reachable card', () => wi
   const h = await page.evaluate(() => document.querySelector('#station-mobile .card').getBoundingClientRect().height);
   assert.ok(h <= 360, `card ${h}px taller than the 360px viewport`);
 }));
+
+test('reduced motion re-renders once the photo face loads', () => withPage({ context: { reducedMotion: 'reduce' } }, async ({ page }) => {
+  await page.waitForFunction(() => window.__journey?.ready, null, { timeout: 30000 });
+  await page.waitForFunction(() => window.__journey.state().photoRendered === true, null, { timeout: 10000 });
+}));
+
+test('3D still boots on browsers without canvas roundRect', async () => {
+  const s = await openPage(server.url + '/index.html?test=1', { init: () => { delete CanvasRenderingContext2D.prototype.roundRect; } });
+  try {
+    await s.page.waitForFunction(() => window.__journey !== undefined, null, { timeout: 30000 });
+    assert.equal(await s.page.evaluate(() => window.__journey.ready), true);
+    assert.deepEqual(s.errors, []);
+  } finally { await s.browser.close(); }
+});
+
+test('losing the WebGL context falls back to the plain page', () => withPage({}, async ({ page }) => {
+  await page.waitForFunction(() => window.__journey?.ready, null, { timeout: 30000 });
+  await page.evaluate(() => document.getElementById('scene').getContext('webgl2').getExtension('WEBGL_lose_context').loseContext());
+  await page.waitForTimeout(300);
+  assert.ok(await page.evaluate(() => document.body.classList.contains('no-webgl')));
+}));

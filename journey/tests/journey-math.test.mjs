@@ -73,3 +73,32 @@ test('day and night themes define the same settings', () => {
   assert.deepEqual(Object.keys(THEMES.day).sort(), Object.keys(THEMES.night).sort());
   assert.equal(THEMES.night.bg, '#0B1020');
 });
+
+import { advancePhase } from '../js/journey-math.js';
+import { readFileSync } from 'node:fs';
+
+test('walk phase always moves forward, one stride per 2π', () => {
+  assert.ok(Math.abs(advancePhase(0, 1.5, 1.5) - 2 * Math.PI) < 1e-9);
+  assert.ok(advancePhase(1, -0.3, 1.5) > 1, 'walking backwards must still advance the cycle');
+  assert.equal(advancePhase(2, 0, 1.5), 2);
+});
+
+test('positionAt is fast on long paths', () => {
+  const pts = Array.from({ length: 481 }, (_, i) => [Math.sin(i / 20) * 8, 0, -i * 0.33]);
+  const t0 = performance.now();
+  for (let i = 0; i < 20000; i++) positionAt((i % 1000) / 1000, pts);
+  const ms = performance.now() - t0;
+  assert.ok(ms < 150, `20k calls took ${ms.toFixed(0)}ms`);
+  assert.deepEqual(positionAt(0, pts), pts[0]);
+});
+
+test('journey data lists every README project', () => {
+  const readme = readFileSync(new URL('../../ReadMe.md', import.meta.url), 'utf8');
+  const urls = new Set(STATIONS.flatMap((s) => s.projects.map((p) => p.url.replace(/\/$/, ''))));
+  const rows = readme.split('\n').filter((l) => /^\| \d+ \|/.test(l));
+  assert.equal(rows.length, STATIONS.reduce((n, s) => n + s.projects.length, 0));
+  for (const row of rows) {
+    const links = [...row.matchAll(/\]\((https:[^)]+)\)/g)].map((m) => m[1].replace(/\/$/, ''));
+    assert.ok(links.some((u) => urls.has(u)), `README row not in data.js: ${row.slice(0, 60)}`);
+  }
+});

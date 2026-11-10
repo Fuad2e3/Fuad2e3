@@ -11,6 +11,9 @@ export function bindScroll(onProgress, stations, sections) {
   measure();
   update();
   addEventListener('scroll', update, { passive: true });
+  // late fonts/images change section heights without a resize event
+  document.fonts?.ready.then(onResize);
+  addEventListener('load', onResize);
   addEventListener('resize', onResize);
   return () => {
     removeEventListener('scroll', update);

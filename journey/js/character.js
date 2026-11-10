@@ -34,7 +34,7 @@ function blobShadow() {
 }
 
 /** Curved face cap (front of the head) with a planar-projected photo and a soft oval mask. */
-function photoFace(url, radius, crop, onReady) {
+function photoFace(url, radius, crop, onReady, onFail) {
   const cap = new THREE.SphereGeometry(radius, 40, 20, 0, Math.PI * 2, 0, Math.PI * 0.46);
   const pos = cap.attributes.position;
   const uv = cap.attributes.uv;
@@ -64,6 +64,7 @@ function photoFace(url, radius, crop, onReady) {
     mat.needsUpdate = true;
     onReady();
   };
+  img.onerror = onFail; // missing photo: plain skin-coloured face instead of a blank one
   img.src = url;
   return mesh;
 }
@@ -71,7 +72,7 @@ function photoFace(url, radius, crop, onReady) {
 // The bundled avatar (journey/assets/me.jpg, 256px) has the face centred around (128, 100).
 const DEFAULT_CROP = () => [18, 8, 220];
 
-export function createCharacter({ photoUrl, photoCrop = DEFAULT_CROP } = {}) {
+export function createCharacter({ photoUrl, photoCrop = DEFAULT_CROP, onChange = () => {} } = {}) {
   const group = new THREE.Group();
   const body = new THREE.Group(); // bob + sway
   group.add(body, blobShadow());
@@ -165,7 +166,8 @@ export function createCharacter({ photoUrl, photoCrop = DEFAULT_CROP } = {}) {
   head.add(skull, ...ears);
   let heroPhoto = false;
   if (photoUrl) {
-    head.add(photoFace(photoUrl, 0.206, photoCrop, () => { heroPhoto = true; }));
+    const face = photoFace(photoUrl, 0.206, photoCrop, () => { heroPhoto = true; onChange(); }, () => { face.material.color.set(0xd9a582); face.material.visible = true; onChange(); });
+    head.add(face);
   } else {
     const plain = new THREE.Mesh(new THREE.SphereGeometry(0.2, 24, 18, 0, Math.PI * 2, 0, Math.PI * 0.45), skin);
     plain.rotation.x = Math.PI / 2;

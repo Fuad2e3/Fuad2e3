@@ -13,7 +13,7 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -24,8 +24,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
+      - name: Build site (without test tooling)
+        run: rsync -a --exclude tests --exclude package.json journey/ _site/
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: journey
+          path: _site
       - id: deployment
         uses: actions/deploy-pages@v4
