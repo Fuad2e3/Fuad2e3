@@ -132,7 +132,7 @@ export function start(canvas, { stations, test = false, onStation = () => {}, ex
     // camera: behind & above; on wide screens shift so the hero sits right of the cards
     const wide = camera.aspect > 1.1;
     const frameX = wide ? -2.2 : 0;
-    camPos.set(pos[0] + frameX, wide ? 3 : 3.6, pos[2] + (wide ? 7 : 8.5));
+    camPos.set(pos[0] + frameX, wide ? 3 : 4.4, pos[2] + (wide ? 7 : 11));
     const lookAt = new THREE.Vector3(pos[0] + frameX, wide ? 1.1 : 0.2, pos[2] - 2);
     if (firstFrame) {
       camera.position.copy(camPos);

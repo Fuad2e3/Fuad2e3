@@ -52,3 +52,17 @@ test('positionAt uses arc length', () => {
 test('walkPhase', () => {
   assert.ok(Math.abs(walkPhase(0.5, 60) - 60 * Math.PI) < 1e-9);
 });
+
+import { progressFromScroll } from '../js/journey-math.js';
+
+test('progressFromScroll maps each section onto its station range', () => {
+  const st = [{ range: [0, 0.2] }, { range: [0.2, 1] }];
+  const spans = [[0, 1000], [1000, 3000]]; // [top, bottom] in px, doc height 3000
+  const vh = 1000; // max scroll 2000
+  assert.equal(progressFromScroll(0, vh, spans, st), 0);
+  assert.equal(progressFromScroll(2000, vh, spans, st), 1);
+  // scrollY 1000 -> reading line at 1000 + 1000*0.5 = 1500 -> 25% into section 2 -> 0.2 + 0.8*0.25
+  assert.ok(Math.abs(progressFromScroll(1000, vh, spans, st) - 0.4) < 1e-9);
+  assert.equal(progressFromScroll(-50, vh, spans, st), 0);
+  assert.equal(progressFromScroll(9999, vh, spans, st), 1);
+});

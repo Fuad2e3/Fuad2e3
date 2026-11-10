@@ -54,3 +54,37 @@ test('scene boots', () => withPage({}, async ({ page, errors }) => {
   assert.ok(share > 0.03, `only ${(share * 100).toFixed(1)}% of pixels lit`);
   assert.deepEqual(errors, []);
 }));
+
+const scrollToStation = (page, id, frac = 0.5) => page.evaluate(([id, frac]) => {
+  const s = document.getElementById(`station-${id}`);
+  const max = document.documentElement.scrollHeight - innerHeight;
+  // solve scrollY so the moving reading line (scrollY + vh*scrollY/max) hits the section at `frac`
+  const y = s.offsetTop + s.offsetHeight * frac;
+  scrollTo(0, y / (1 + innerHeight / max));
+}, [id, frac]);
+
+test('scroll drives character', () => withPage({}, async ({ page }) => {
+  await page.waitForFunction(() => window.__journey?.ready, null, { timeout: 30000 });
+  await scrollToStation(page, 'web');
+  await page.waitForTimeout(900);
+  assert.equal(await page.evaluate(() => window.__journey.state().station), 'web');
+}));
+
+test('end key lands at contact', () => withPage({}, async ({ page }) => {
+  await page.waitForFunction(() => window.__journey?.ready, null, { timeout: 30000 });
+  await page.keyboard.press('End');
+  await page.waitForTimeout(1200);
+  const s = await page.evaluate(() => window.__journey.state());
+  assert.equal(s.station, 'contact');
+  assert.ok(s.progress > 0.95, `progress ${s.progress}`);
+}));
+
+test('scroll up walks backwards', () => withPage({}, async ({ page }) => {
+  await page.waitForFunction(() => window.__journey?.ready, null, { timeout: 30000 });
+  await scrollToStation(page, 'web');
+  await page.waitForTimeout(900);
+  await page.mouse.move(640, 400);
+  await page.mouse.wheel(0, -400);
+  await page.waitForTimeout(250);
+  assert.equal(await page.evaluate(() => window.__journey.state().facing), -1);
+}));

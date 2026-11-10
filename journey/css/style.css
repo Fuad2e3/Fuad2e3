@@ -93,3 +93,12 @@ main { position: relative; z-index: 2; }
   .hint i::after { animation: none; }
   .project, .links a, .dots a { transition: none; }
 }
+.project.current { border-color: var(--station); background: rgba(0, 194, 255, .1); box-shadow: 0 0 0 1px var(--station), 0 0 22px rgba(0, 194, 255, .25); }
+.station .card { perspective: 800px; }
+@media (max-width: 640px) {
+  .station h2 { margin-bottom: 12px; }
+  .projects { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 10px; padding-bottom: 6px; margin-inline: -4px; scrollbar-width: none; }
+  .projects::-webkit-scrollbar { display: none; }
+  .projects li { flex: 0 0 82%; scroll-snap-align: start; }
+  .card { position: sticky; bottom: 16px; }
+}
