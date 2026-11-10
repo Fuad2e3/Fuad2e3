@@ -88,3 +88,37 @@ test('scroll up walks backwards', () => withPage({}, async ({ page }) => {
   await page.waitForTimeout(250);
   assert.equal(await page.evaluate(() => window.__journey.state().facing), -1);
 }));
+
+test('reduced motion shows static page', () => withPage({ context: { reducedMotion: 'reduce' } }, async ({ page }) => {
+  await page.waitForFunction(() => window.__journey?.ready, null, { timeout: 30000 });
+  await page.waitForTimeout(300);
+  const s = await page.evaluate(() => ({
+    animating: window.__journey.state().animating,
+    transforms: [...document.querySelectorAll('.station .card')].map((c) => getComputedStyle(c).transform),
+  }));
+  assert.equal(s.animating, false);
+  assert.ok(s.transforms.every((t) => t === 'none'), s.transforms.join(','));
+  await scrollToStation(page, 'ai');
+  await page.waitForTimeout(400);
+  assert.equal(await page.evaluate(() => window.__journey.state().station), 'ai');
+}));
+
+test('resize keeps aspect', () => withPage({}, async ({ page }) => {
+  await page.waitForFunction(() => window.__journey?.ready, null, { timeout: 30000 });
+  await page.setViewportSize({ width: 600, height: 900 });
+  await page.waitForTimeout(500);
+  const aspect = await page.evaluate(() => window.__journey.state().aspect);
+  assert.ok(Math.abs(aspect - 600 / 900) < 0.01, `aspect ${aspect}`);
+}));
+
+test('keyboard reachable', () => withPage({}, async ({ page }) => {
+  await page.waitForSelector('.project');
+  let onProject = false;
+  for (let i = 0; i < 20 && !onProject; i++) {
+    await page.keyboard.press('Tab');
+    onProject = await page.evaluate(() => document.activeElement?.classList.contains('project'));
+  }
+  assert.ok(onProject, 'Tab never reached a project link');
+  const outline = await page.evaluate(() => getComputedStyle(document.activeElement).outlineStyle);
+  assert.notEqual(outline, 'none');
+}));

@@ -157,16 +157,17 @@ export function start(canvas, { stations, test = false, onStation = () => {}, ex
     frame(now / 1000, dt);
   }
   raf = requestAnimationFrame(loop);
-  addEventListener('resize', resize);
+  const onResize = () => { resize(); if (!running) frame(performance.now() / 1000, 1 / 60); };
+  addEventListener('resize', onResize);
 
   return {
     setProgress(v) { target = clamp01(v); },
     renderOnce(v = target) { target = p = clamp01(v); firstFrame = true; frame(performance.now() / 1000, 1 / 60); },
     pause() { running = false; cancelAnimationFrame(raf); },
-    resume() { if (!running) { running = true; last = performance.now(); raf = requestAnimationFrame(loop); } },
-    stopAnimating() { animating = false; this.pause(); },
+    resume() { if (!running && animating) { running = true; last = performance.now(); raf = requestAnimationFrame(loop); } },
+    stopAnimating() { animating = false; running = false; cancelAnimationFrame(raf); },
     resize,
     state: () => ({ progress: p, target, station, facing, animating: animating && running, aspect: camera.aspect }),
-    dispose() { cancelAnimationFrame(raf); removeEventListener('resize', resize); renderer.dispose(); },
+    dispose() { cancelAnimationFrame(raf); removeEventListener('resize', onResize); renderer.dispose(); },
   };
 }

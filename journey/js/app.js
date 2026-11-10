@@ -1,7 +1,7 @@
 import { STATIONS } from './data.js';
 import { renderSections, renderDots, setActiveDot } from './render-sections.js';
 import { bindScroll, revealCards } from './scroll.js';
-import { localProgress, positionAt } from './journey-math.js';
+import { localProgress, positionAt, stationIndexAt } from './journey-math.js';
 
 const test = new URLSearchParams(location.search).has('test');
 const dots = document.getElementById('dots');
@@ -45,11 +45,27 @@ if (!api) document.body.classList.add('no-webgl');
 
 const sections = [...document.querySelectorAll('.station')];
 const bar = document.getElementById('progress-bar');
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (api && reduced) {
+  api.stopAnimating();
+  api.renderOnce(0);
+}
+let shownStation = null;
 bindScroll((p) => {
   bar.style.transform = `scaleX(${p})`;
-  if (api) api.setProgress(p);
+  if (api && reduced) {
+    // no motion: cut straight to a still of each station
+    const id = STATIONS[stationIndexAt(p, STATIONS)].id;
+    if (id !== shownStation) { shownStation = id; api.renderOnce(p); setActiveDot(dots, id); }
+  } else if (api) api.setProgress(p);
   else setActiveDot(dots, STATIONS[sections.findIndex((s) => s.getBoundingClientRect().bottom > innerHeight / 2)]?.id ?? 'contact');
 }, STATIONS, sections);
-revealCards();
+if (!reduced) revealCards();
+
+document.addEventListener('visibilitychange', () => {
+  if (!api || reduced) return;
+  if (document.hidden) api.pause();
+  else api.resume();
+});
 
 if (test) window.__journey = api ? { ...api, ready: true } : { ready: false };
