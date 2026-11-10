@@ -172,3 +172,50 @@ test('losing the WebGL context falls back to the plain page', () => withPage({},
   await page.waitForTimeout(300);
   assert.ok(await page.evaluate(() => document.body.classList.contains('no-webgl')));
 }));
+
+// Builds a tiny glTF with "Idle" and "Walk" clips inside the browser (GLTFExporter), returns bytes.
+async function makeGlb() {
+  const s = await openPage(server.url + '/index.html?test=1');
+  try {
+    const bytes = await s.page.evaluate(async () => {
+      const THREE = await import('three');
+      const { GLTFExporter } = await import('three/addons/exporters/GLTFExporter.js');
+      const root = new THREE.Group();
+      root.name = 'Hero';
+      const leg = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.9, 0.2), new THREE.MeshStandardMaterial());
+      leg.name = 'Leg';
+      leg.position.y = 0.45;
+      const torso = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.9, 0.3), new THREE.MeshStandardMaterial());
+      torso.position.y = 1.35;
+      root.add(leg, torso);
+      const q = (a) => new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1, 0, 0), a).toArray();
+      const walk = new THREE.AnimationClip('Walk', 1, [new THREE.QuaternionKeyframeTrack('Leg.quaternion', [0, 0.5, 1], [...q(0.5), ...q(-0.5), ...q(0.5)])]);
+      const idle = new THREE.AnimationClip('Idle', 1, [new THREE.QuaternionKeyframeTrack('Leg.quaternion', [0, 1], [...q(0), ...q(0)])]);
+      const buf = await new GLTFExporter().parseAsync(root, { binary: true, animations: [walk, idle] });
+      return [...new Uint8Array(buf)];
+    });
+    return Buffer.from(bytes);
+  } finally { await s.browser.close(); }
+}
+
+test('a realistic me.glb replaces the stylised hero and walks with the scroll', async () => {
+  const glb = await makeGlb();
+  const s = await openPage(server.url + '/index.html?test=1', {
+    routes: [[/\/assets\/me\.glb$/, (route) => route.fulfill({ status: 200, body: glb, contentType: 'model/gltf-binary' })]],
+  });
+  try {
+    await s.page.waitForFunction(() => window.__journey?.state().heroModel === 'glb', null, { timeout: 20000 });
+    const t0 = await s.page.evaluate(() => window.__journey.state().walkTime);
+    await s.page.evaluate(() => window.__journey.setProgress(0.12));
+    await s.page.waitForTimeout(600);
+    const t1 = await s.page.evaluate(() => window.__journey.state().walkTime);
+    assert.notEqual(t1, t0, 'walk clip did not advance while walking');
+    assert.deepEqual(s.errors, []);
+  } finally { await s.browser.close(); }
+});
+
+test('without me.glb the stylised hero stays', () => withPage({}, async ({ page }) => {
+  await page.waitForFunction(() => window.__journey?.ready, null, { timeout: 30000 });
+  await page.waitForTimeout(800);
+  assert.equal(await page.evaluate(() => window.__journey.state().heroModel), 'stylised');
+}));

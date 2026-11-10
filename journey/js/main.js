@@ -16,7 +16,7 @@ const JUMP = 0.15;
 
 const shortestAngle = (a, b) => Math.atan2(Math.sin(b - a), Math.cos(b - a));
 
-export function start(canvas, { stations, test = false, onStation = () => {}, onLost = () => {}, extras = [], photoUrl } = {}) {
+export function start(canvas, { stations, test = false, onStation = () => {}, onLost = () => {}, extras = [], photoUrl, modelUrl } = {}) {
   let renderer;
   let small = false;
   try {
@@ -47,7 +47,21 @@ export function start(canvas, { stations, test = false, onStation = () => {}, on
   const world = createWorld(scene, stations);
   let photoRendered = false;
   // the face texture arrives after the first frames; when the loop is stopped (reduced motion) draw once more
-  const hero = createCharacter({ photoUrl, onChange: () => { if (!running) { frame(performance.now() / 1000, 1 / 60); } photoRendered = true; } });
+  let hero = createCharacter({ photoUrl, onChange: () => { if (!running) { frame(performance.now() / 1000, 1 / 60); } photoRendered = true; } });
+  let heroModel = 'stylised';
+  if (modelUrl) {
+    // a realistic avatar is optional: if assets/me.glb is missing, the stylised hero stays
+    import('./glb-hero.js')
+      .then(({ loadGlbHero }) => loadGlbHero(modelUrl))
+      .then((glbHero) => {
+        scene.remove(hero.group);
+        hero = glbHero;
+        scene.add(hero.group);
+        heroModel = 'glb';
+        if (!running) frame(performance.now() / 1000, 1 / 60);
+      })
+      .catch(() => {});
+  }
   const length = pathLength(world.pathPoints);
   let walkPh = 0;
   scene.add(hero.group);
@@ -214,7 +228,7 @@ export function start(canvas, { stations, test = false, onStation = () => {}, on
     resume() { if (!running && animating) { running = true; last = performance.now(); raf = requestAnimationFrame(loop); } },
     stopAnimating() { animating = false; running = false; cancelAnimationFrame(raf); },
     resize,
-    state: () => ({ progress: p, target, station, facing, animating: animating && running, aspect: camera.aspect, heroPhoto: hero.heroPhoto, photoRendered, theme }),
+    state: () => ({ progress: p, target, station, facing, animating: animating && running, aspect: camera.aspect, heroPhoto: hero.heroPhoto, photoRendered, theme, heroModel, walkTime: hero.walkTime ?? null }),
     dispose() { cancelAnimationFrame(raf); removeEventListener('resize', onResize); renderer.dispose(); },
   };
 }
