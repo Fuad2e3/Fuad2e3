@@ -13,7 +13,7 @@ const JUMP = 0.15;
 
 const shortestAngle = (a, b) => Math.atan2(Math.sin(b - a), Math.cos(b - a));
 
-export function start(canvas, { stations, test = false, onStation = () => {}, extras = [] } = {}) {
+export function start(canvas, { stations, test = false, onStation = () => {}, extras = [], photoUrl } = {}) {
   let renderer;
   try {
     renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: test, powerPreference: 'high-performance' });
@@ -36,7 +36,7 @@ export function start(canvas, { stations, test = false, onStation = () => {}, ex
   scene.add(rim);
 
   const world = createWorld(scene, stations);
-  const hero = createCharacter();
+  const hero = createCharacter({ photoUrl });
   scene.add(hero.group);
 
   // glowing footprints that fade out
@@ -69,6 +69,7 @@ export function start(canvas, { stations, test = false, onStation = () => {}, ex
   const camPos = new THREE.Vector3();
   const look = new THREE.Vector3();
   let firstFrame = true;
+  let idle = 0;
 
   function resize() {
     const w = canvas.clientWidth || innerWidth;
@@ -101,7 +102,8 @@ export function start(canvas, { stations, test = false, onStation = () => {}, ex
     const b = positionAt(clamp01(p + 0.002), world.pathPoints);
     let want = Math.atan2(b[0] - a[0], b[2] - a[2]);
     if (facing < 0) want += Math.PI;
-    if (!walking && p < 0.02) want = 0; // face the camera at the start
+    idle = walking ? 0 : idle + dt;
+    if (idle > 0.8 || p < 0.02) want = Math.atan2(camera.position.x - pos[0], camera.position.z - pos[2]); // stop scrolling → he turns to look at you
     yaw += shortestAngle(yaw, want) * Math.min(1, dt * 8);
     hero.group.position.set(pos[0], 0, pos[2]);
     hero.group.rotation.y = yaw;
@@ -167,7 +169,7 @@ export function start(canvas, { stations, test = false, onStation = () => {}, ex
     resume() { if (!running && animating) { running = true; last = performance.now(); raf = requestAnimationFrame(loop); } },
     stopAnimating() { animating = false; running = false; cancelAnimationFrame(raf); },
     resize,
-    state: () => ({ progress: p, target, station, facing, animating: animating && running, aspect: camera.aspect }),
+    state: () => ({ progress: p, target, station, facing, animating: animating && running, aspect: camera.aspect, heroPhoto: hero.heroPhoto }),
     dispose() { cancelAnimationFrame(raf); removeEventListener('resize', onResize); renderer.dispose(); },
   };
 }

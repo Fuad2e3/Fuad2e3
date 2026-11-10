@@ -122,3 +122,9 @@ test('keyboard reachable', () => withPage({}, async ({ page }) => {
   const outline = await page.evaluate(() => getComputedStyle(document.activeElement).outlineStyle);
   assert.notEqual(outline, 'none');
 }));
+
+test('hero wears the photo face', () => withPage({}, async ({ page, errors }) => {
+  await page.waitForFunction(() => window.__journey?.ready, null, { timeout: 30000 });
+  await page.waitForFunction(() => window.__journey.state().heroPhoto === true, null, { timeout: 10000 });
+  assert.deepEqual(errors, []);
+}));
