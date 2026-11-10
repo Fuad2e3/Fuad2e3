@@ -6,9 +6,9 @@ export const THEMES = {
     stars: 0.7, planet: 0.55, hemi: 1.1, sun: 1.4, bloom: 0.8, bloomThreshold: 0.3, exposure: 1,
   },
   day: {
-    bg: '#cfe6ff', fogDensity: 0.016, skyTop: '#3d8bff', skyHorizon: '#e6f3ff',
+    bg: '#cfe6ff', fogDensity: 0.011, skyTop: '#2a72e0', skyHorizon: '#dcefff',
     floor: '#b9cde6', grid: '#8fb0dc', gridOpacity: 0.55, road: '#eef5ff', roadEmissive: '#000000', edge: '#0091d5',
-    stars: 0, planet: 0.25, hemi: 1.9, sun: 2.4, bloom: 0.35, bloomThreshold: 0.75, exposure: 1.05,
+    stars: 0, planet: 0.25, hemi: 1.6, sun: 2.6, bloom: 0.3, bloomThreshold: 0.8, exposure: 0.95,
   },
 };
 
